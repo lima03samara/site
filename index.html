@@ -3,47 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Papelaria de Casamento Editável — Kit Completo de Templates | Renê & Samara</title>
+  <title>Templates Editáveis para Papelaria de Casamento Minimalista | Diário de Noiva da Sam</title>
   <meta name="description" content="Kit completo de papelaria de casamento editável no Canva. 13 templates digitais com identidade visual cristã e minimalista. Usado no casamento de Renê & Samara. Acesso imediato." />
-  <meta property="og:title" content="Papelaria de Casamento Editável — Kit Completo de Templates | Renê & Samara" />
-  <meta property="og:description" content="Kit completo de papelaria de casamento editável no Canva. 13 templates digitais com identidade visual cristã e minimalista. Usado no casamento de Renê & Samara. Acesso imediato." />
+  <meta property="og:title" content="Templates Editáveis para Papelaria de Casamento Minimalista | Diário de Noiva da Sam" />
+  <meta property="og:description" content="Kit completo de papelaria de casamento editável no Canva. 13 templates digitais com identidade visual cristã e minimalista. Acesso imediato." />
   <meta property="og:type" content="website" />
 
   <style>
     /* =============================================
-       GOOGLE FONTS IMPORT
+       GOOGLE FONTS
     ============================================= */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
 
     /* =============================================
        RESET & BASE
     ============================================= */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Lato', sans-serif;
-      color: #2B2B2B;
-      background-color: #FFFFFF;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; color: #2B2B2B; background: #fff; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
 
     /* =============================================
        CSS VARIABLES
@@ -59,198 +38,34 @@
       --divider: #E0D6CC;
       --bg-cta: #2B2B2B;
       --bg-faq-open: #FAF7F4;
+      --green: #27AE60;
+      --green-hover: #219653;
+      --green-dark: #1B5E20;
     }
 
     /* =============================================
-       TYPOGRAPHY HELPERS
-    ============================================= */
-    .font-playfair { font-family: 'Playfair Display', serif; }
-    .font-lato { font-family: 'Lato', sans-serif; }
-
-    /* =============================================
-       ANIMATION BASE (fade-in on scroll)
+       SCROLL ANIMATION BASE
     ============================================= */
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
 
     /* =============================================
-       NAVBAR
+       SHARED SECTION STYLES
     ============================================= */
-    #navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: var(--white);
-      padding: 18px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: padding 0.3s ease, box-shadow 0.3s ease;
-    }
-    #navbar.scrolled {
-      padding: 12px 40px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-    }
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 14px;
-      color: var(--text-main);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      max-width: 220px;
-      line-height: 1.3;
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: var(--text-main);
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-    .nav-links .nav-cta {
-      background: var(--accent);
-      color: var(--white) !important;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    .nav-links .nav-cta:hover {
-      background: var(--accent-hover);
-      box-shadow: 0 4px 12px rgba(196,154,108,0.3);
-    }
-
-    /* Hamburger */
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--text-main);
-      transition: all 0.3s ease;
-      border-radius: 2px;
-    }
-    .hamburger.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Mobile menu */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--white);
-      z-index: 999;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 32px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .mobile-menu.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .mobile-menu a {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      color: var(--text-main);
-      transition: color 0.2s;
-    }
-    .mobile-menu a:hover {
-      color: var(--accent);
-    }
-    .mobile-menu .mobile-cta {
-      background: var(--accent);
-      color: var(--white) !important;
-      padding: 14px 36px;
-      border-radius: 8px;
-      font-weight: 700;
-    }
-    .mobile-menu-close {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--text-main);
-      background: none;
-      border: none;
-      line-height: 1;
-    }
-
-    @media (max-width: 768px) {
-      #navbar {
-        padding: 16px 20px;
-      }
-      #navbar.scrolled {
-        padding: 12px 20px;
-      }
-      .nav-links {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .mobile-menu {
-        display: flex;
-      }
-    }
-
-    /* =============================================
-       SECTION SHARED
-    ============================================= */
-    section {
-      padding: 80px 40px;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    section { padding: 80px 40px; }
+    .container { max-width: 1100px; margin: 0 auto; }
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 38px);
+      font-size: clamp(24px, 3.8vw, 38px);
       font-weight: 700;
       color: var(--text-main);
       text-align: center;
       line-height: 1.25;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
     .section-subtitle {
       font-family: 'Lato', sans-serif;
@@ -262,80 +77,21 @@
       line-height: 1.7;
     }
     .section-divider {
-      width: 50px;
-      height: 2px;
+      width: 50px; height: 2px;
       background: var(--accent);
-      margin: 16px auto 40px;
+      margin: 14px auto 36px;
       border-radius: 2px;
     }
 
     /* =============================================
-       HERO SECTION
+       BUTTONS — GREEN WITH RIPPLE + PULSE
     ============================================= */
-    #hero {
-      padding-top: 120px;
-      padding-bottom: 80px;
-      padding-left: 40px;
-      padding-right: 40px;
-      background: var(--white);
-    }
-    .hero-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-    .hero-badge {
+    .btn-buy {
+      position: relative;
+      overflow: hidden;
       display: inline-block;
-      border: 1px solid var(--divider);
-      padding: 6px 14px;
-      border-radius: 4px;
-      font-family: 'Lato', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-main);
-      margin-bottom: 24px;
-    }
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(28px, 4vw, 46px);
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .hero-subtitle {
-      font-family: 'Lato', sans-serif;
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.75;
-      margin-bottom: 28px;
-    }
-    .hero-benefits {
-      list-style: none;
-      margin-bottom: 32px;
-    }
-    .hero-benefits li {
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: var(--text-main);
-      padding: 6px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .hero-benefits li span.check {
-      color: var(--accent);
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white);
+      background: var(--green);
+      color: #fff;
       font-family: 'Lato', sans-serif;
       font-weight: 700;
       font-size: 16px;
@@ -343,753 +99,592 @@
       border-radius: 8px;
       border: none;
       cursor: pointer;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
       letter-spacing: 0.02em;
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+      animation: btnPulse 3.5s ease-in-out infinite;
+      text-align: center;
     }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      box-shadow: 0 6px 20px rgba(196,154,108,0.35);
+    .btn-buy:hover {
+      background: var(--green-hover);
+      box-shadow: 0 6px 22px rgba(39,174,96,0.45);
+      animation: none;
+      transform: translateY(-1px);
     }
-    .hero-subtext {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-top: 12px;
-    }
-    .hero-scroll-link {
-      display: inline-block;
-      margin-top: 16px;
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: var(--text-secondary);
-      transition: color 0.2s;
-    }
-    .hero-scroll-link:hover {
-      color: var(--accent);
+    .btn-buy:active { transform: scale(0.97); }
+    .btn-buy.btn-lg { font-size: 18px; padding: 18px 42px; }
+    .btn-buy.btn-xl { font-size: 20px; padding: 20px 52px; border-radius: 10px; }
+
+    @keyframes btnPulse {
+      0%, 100% { box-shadow: 0 4px 14px rgba(39,174,96,0.3); }
+      50% { box-shadow: 0 4px 28px rgba(39,174,96,0.6); }
     }
 
-    /* Hero carousel */
-    .hero-carousel {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.12);
-      aspect-ratio: 3/4;
-      background: var(--bg-tertiary);
-    }
-    .hero-carousel-slides {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-    .hero-slide {
+    /* Ripple effect */
+    .btn-buy .ripple {
       position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 0.8s ease;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      transform: scale(0);
+      animation: rippleAnim 0.65s linear;
+      pointer-events: none;
     }
-    .hero-slide.active {
-      opacity: 1;
+    @keyframes rippleAnim {
+      to { transform: scale(4); opacity: 0; }
     }
-    .hero-slide img {
+
+    /* Center buttons on mobile */
+    .btn-center-wrap {
+      text-align: center;
+      margin-top: 28px;
+    }
+    @media (max-width: 768px) {
+      .btn-buy { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+    }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--white);
+      padding: 16px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: padding 0.3s ease, box-shadow 0.3s ease;
+    }
+    #navbar.scrolled { padding: 10px 40px; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px; color: var(--text-main); font-weight: 600;
+      letter-spacing: 0.02em; max-width: 210px; line-height: 1.3;
+    }
+    .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+    .nav-links a { font-family: 'Lato', sans-serif; font-size: 14px; color: var(--text-main); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .nav-cta {
+      background: var(--green); color: #fff !important;
+      padding: 8px 18px; border-radius: 6px; font-weight: 700;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+    .nav-links .nav-cta:hover { background: var(--green-hover); box-shadow: 0 4px 12px rgba(39,174,96,0.35); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text-main); transition: all 0.3s ease; border-radius: 2px;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--white); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 30px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--text-main); transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu .mobile-cta {
+      background: var(--green); color: #fff !important;
+      padding: 14px 36px; border-radius: 8px; font-weight: 700;
+    }
+    .mobile-menu-close {
+      position: absolute; top: 20px; right: 24px;
+      font-size: 28px; cursor: pointer; color: var(--text-main);
+      background: none; border: none; line-height: 1;
+    }
+
+    @media (max-width: 768px) {
+      #navbar { padding: 14px 20px; }
+      #navbar.scrolled { padding: 10px 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+      section { padding: 60px 20px; }
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    #hero { padding-top: 110px; padding-bottom: 80px; background: var(--white); }
+
+    /* Mobile-only photo at very top */
+    .hero-mobile-img {
+      display: none;
       width: 100%;
-      height: 100%;
+      max-height: 320px;
       object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 28px;
     }
+    @media (max-width: 900px) {
+      .hero-mobile-img { display: block; }
+    }
+
+    .hero-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--divider);
+      padding: 6px 14px; border-radius: 4px;
+      font-family: 'Lato', sans-serif; font-size: 11px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-main); margin-bottom: 22px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.8vw, 44px);
+      font-weight: 700; color: var(--text-main);
+      line-height: 1.2; margin-bottom: 18px;
+    }
+    .hero-subtitle {
+      font-family: 'Lato', sans-serif; font-size: 16px;
+      color: var(--text-secondary); line-height: 1.75; margin-bottom: 26px;
+    }
+    .hero-benefits { list-style: none; margin-bottom: 30px; }
+    .hero-benefits li {
+      font-family: 'Lato', sans-serif; font-size: 15px; color: var(--text-main);
+      padding: 6px 0; display: flex; align-items: center; gap: 10px;
+    }
+    .hero-benefits li .check-icon { flex-shrink: 0; }
+    .hero-subtext { font-family: 'Lato', sans-serif; font-size: 13px; color: var(--text-secondary); margin-top: 12px; }
+    .hero-scroll-link {
+      display: inline-block; margin-top: 16px;
+      font-family: 'Lato', sans-serif; font-size: 14px;
+      color: var(--text-secondary); transition: color 0.2s;
+    }
+    .hero-scroll-link:hover { color: var(--accent); }
+
+    /* Hero Carousel */
+    .hero-carousel {
+      position: relative; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.12); background: var(--bg-tertiary);
+    }
+    .hero-carousel-inner { position: relative; width: 100%; padding-top: 125%; }
+    .hero-slide {
+      position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide img { width: 100%; height: 100%; object-fit: cover; }
     .hero-dots {
-      position: absolute;
-      bottom: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 2;
+      position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 2;
     }
     .hero-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      cursor: pointer;
-      border: none;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.5); cursor: pointer; border: none;
       transition: background 0.3s, transform 0.3s;
     }
-    .hero-dot.active {
-      background: var(--white);
-      transform: scale(1.2);
-    }
+    .hero-dot.active { background: #fff; transform: scale(1.25); }
 
     @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .hero-carousel {
-        aspect-ratio: 4/3;
-        max-height: 360px;
-      }
-      #hero {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+      .hero-grid { grid-template-columns: 1fr; gap: 0; }
+      /* Hide desktop carousel on mobile */
+      .hero-carousel { display: none; }
+      #hero { padding-left: 20px; padding-right: 20px; padding-top: 90px; }
     }
 
     /* =============================================
        SECTION 2 — BENEFITS
     ============================================= */
-    #beneficios {
-      background: var(--bg-secondary);
-    }
+    #beneficios { background: var(--bg-secondary); }
     .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 0 auto 40px;
     }
     .benefit-card {
-      background: var(--white);
-      border: 1px solid var(--divider);
-      border-radius: 12px;
-      padding: 36px 28px;
-      text-align: center;
+      background: var(--white); border: 1px solid var(--divider);
+      border-radius: 12px; padding: 36px 28px; text-align: center;
     }
-    .benefit-icon {
-      font-size: 36px;
-      margin-bottom: 18px;
-    }
+    .benefit-icon { margin: 0 auto 18px; display: flex; justify-content: center; }
     .benefit-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif; font-size: 20px;
+      font-weight: 700; color: var(--text-main); margin-bottom: 12px;
     }
     .benefit-text {
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.7;
+      font-family: 'Lato', sans-serif; font-size: 15px;
+      color: var(--text-secondary); line-height: 1.7;
     }
+    .benefits-cta-wrap { text-align: center; margin-top: 8px; }
 
     @media (max-width: 768px) {
-      .benefits-grid {
-        grid-template-columns: 1fr;
-      }
-      section {
-        padding: 60px 20px;
-      }
+      .benefits-grid { grid-template-columns: 1fr; }
     }
 
     /* =============================================
-       SECTION 3 — KIT CONTENTS
+       SECTION 3 — KIT
     ============================================= */
-    #o-kit {
-      background: var(--white);
-    }
+    #o-kit { background: var(--white); }
     .kit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto 40px;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; max-width: 1100px; margin: 0 auto 40px;
     }
     .kit-card {
-      background: var(--white);
-      border-radius: 12px;
+      background: var(--white); border-radius: 12px;
       box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .kit-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+    .kit-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.12); }
+    .kit-card.bonus-card { border: 2px solid var(--accent); }
+    .kit-card-img-wrap { position: relative; }
+    .kit-card-img { width: 100%; height: 200px; object-fit: cover; }
+    .kit-card-number {
+      position: absolute; top: 10px; left: 10px;
+      background: rgba(43,43,43,0.82); color: #fff;
+      font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700;
+      width: 30px; height: 30px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
     }
-    .kit-card.bonus-card {
-      border: 2px solid var(--accent);
-    }
-    .kit-card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .kit-card-body {
-      padding: 18px 20px;
-    }
+    .kit-card-body { padding: 18px 20px; }
     .kit-card-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 8px;
-      line-height: 1.3;
+      font-family: 'Playfair Display', serif; font-size: 16px;
+      font-weight: 700; color: var(--text-main); margin-bottom: 8px; line-height: 1.3;
     }
     .kit-card-desc {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 12px;
+      font-family: 'Lato', sans-serif; font-size: 13px;
+      color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px;
     }
     .tag-canva {
-      display: inline-block;
-      background: var(--bg-secondary);
-      color: var(--accent);
-      font-family: 'Lato', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      display: inline-block; background: var(--bg-secondary); color: var(--accent);
+      font-family: 'Lato', sans-serif; font-size: 11px; font-weight: 700;
+      padding: 4px 10px; border-radius: 4px; letter-spacing: 0.04em; text-transform: uppercase;
     }
-    .tag-bonus {
-      background: var(--accent);
-      color: var(--white);
-    }
+    .tag-bonus { background: var(--accent); color: #fff; }
     .kit-info-box {
-      max-width: 700px;
-      margin: 0 auto;
-      background: var(--bg-secondary);
-      border-radius: 12px;
-      padding: 24px 32px;
-      text-align: center;
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.7;
+      max-width: 700px; margin: 0 auto;
+      background: var(--bg-secondary); border-radius: 12px;
+      padding: 24px 32px; text-align: center;
+      font-family: 'Lato', sans-serif; font-size: 15px;
+      color: var(--text-secondary); line-height: 1.7;
     }
 
-    @media (max-width: 900px) {
-      .kit-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 560px) {
-      .kit-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+    @media (max-width: 900px) { .kit-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .kit-grid { grid-template-columns: 1fr; } }
 
     /* =============================================
        SECTION 4 — HOW IT WORKS
     ============================================= */
-    #como-funciona {
-      background: var(--bg-secondary);
-    }
-    .steps-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      position: relative;
-    }
+    #como-funciona { background: var(--bg-secondary); }
     .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      position: relative;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0; max-width: 900px; margin: 0 auto; position: relative;
     }
     .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 36px;
-      left: 16.66%;
-      right: 16.66%;
-      height: 1px;
-      background: var(--divider);
-      z-index: 0;
+      content: ''; position: absolute; top: 36px;
+      left: 16.66%; right: 16.66%; height: 1px;
+      background: var(--divider); z-index: 0;
     }
-    .step-item {
-      padding: 0 24px;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
+    .step-item { padding: 0 24px; text-align: center; position: relative; z-index: 1; }
     .step-number {
-      font-family: 'Playfair Display', serif;
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--divider);
-      margin: 0 auto 20px;
-      line-height: 1;
+      font-family: 'Playfair Display', serif; font-size: 40px;
+      font-weight: 700; color: var(--accent);
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--divider);
+      margin: 0 auto 20px; line-height: 1;
     }
     .step-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif; font-size: 18px;
+      font-weight: 700; color: var(--text-main); margin-bottom: 12px;
     }
     .step-text {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.7;
+      font-family: 'Lato', sans-serif; font-size: 14px;
+      color: var(--text-secondary); line-height: 1.7;
     }
 
     @media (max-width: 768px) {
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-      .steps-grid::before {
-        display: none;
-      }
+      .steps-grid { grid-template-columns: 1fr; gap: 36px; }
+      .steps-grid::before { display: none; }
     }
 
     /* =============================================
-       SECTION 5 — GALLERY CAROUSEL
+       SECTION 5 — GALLERY (FIXED HEIGHT — no layout shift)
     ============================================= */
-    #galeria {
-      background: var(--white);
-    }
-    .gallery-carousel {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    #galeria { background: var(--white); }
+    .gallery-carousel { position: relative; max-width: 900px; margin: 0 auto; }
     .gallery-track {
       position: relative;
-      border-radius: 16px;
-      overflow: hidden;
+      border-radius: 16px; overflow: hidden;
       background: var(--bg-tertiary);
-    }
-    .gallery-slides {
-      position: relative;
-      width: 100%;
+      height: 480px; /* FIXED HEIGHT prevents layout shift */
     }
     .gallery-slide {
-      display: none;
-      width: 100%;
+      position: absolute; inset: 0;
+      opacity: 0; transition: opacity 0.7s ease;
     }
-    .gallery-slide.active {
-      display: block;
-    }
+    .gallery-slide.active { opacity: 1; }
     .gallery-slide img {
-      width: 100%;
-      max-height: 500px;
-      object-fit: cover;
-            border-radius: 16px;
+      width: 100%; height: 100%;
+      object-fit: cover; border-radius: 16px;
     }
     .gallery-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(255,255,255,0.92);
-      border: 1px solid var(--divider);
-      color: var(--text-main);
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      font-size: 18px;
-      cursor: pointer;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.92); border: 1px solid var(--divider);
+      color: var(--text-main); width: 44px; height: 44px; border-radius: 50%;
+      font-size: 18px; cursor: pointer; z-index: 10;
+      display: flex; align-items: center; justify-content: center;
       transition: background 0.2s, box-shadow 0.2s;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    .gallery-btn:hover {
-      background: var(--white);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    }
+    .gallery-btn:hover { background: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
     .gallery-btn-prev { left: -22px; }
     .gallery-btn-next { right: -22px; }
-    .gallery-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 20px;
-    }
+    .gallery-dots { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
     .gallery-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--divider);
-      cursor: pointer;
-      border: none;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--divider); cursor: pointer; border: none;
       transition: background 0.3s, transform 0.3s;
     }
-    .gallery-dot.active {
-      background: var(--accent);
-      transform: scale(1.2);
-    }
+    .gallery-dot.active { background: var(--accent); transform: scale(1.2); }
 
     @media (max-width: 768px) {
-      .gallery-btn-prev { left: 6px; }
-      .gallery-btn-next { right: 6px; }
+      .gallery-track { height: 280px; }
+      .gallery-btn-prev { left: 8px; }
+      .gallery-btn-next { right: 8px; }
     }
 
     /* =============================================
        SECTION 6 — TESTIMONIAL
     ============================================= */
-    #depoimento {
-      background: var(--bg-secondary);
-    }
-    .testimonial-wrapper {
-      max-width: 820px;
-      margin: 0 auto;
-    }
+    #depoimento { background: var(--bg-secondary); }
+    .testimonial-wrapper { max-width: 820px; margin: 0 auto; }
     .testimonial-box {
-      background: var(--white);
-      border: 1px solid var(--divider);
-      border-radius: 16px;
-      padding: 48px;
-      display: flex;
-      gap: 40px;
-      align-items: center;
+      background: var(--white); border: 1px solid var(--divider);
+      border-radius: 16px; padding: 48px;
+      display: flex; gap: 40px; align-items: center;
     }
-    .testimonial-content {
-      flex: 1;
-    }
+    .testimonial-content { flex: 1; }
     .testimonial-quote-icon {
-      font-family: 'Playfair Display', serif;
-      font-size: 72px;
-      color: var(--accent);
-      line-height: 0.6;
-      margin-bottom: 24px;
-      display: block;
+      font-family: 'Playfair Display', serif; font-size: 72px;
+      color: var(--accent); line-height: 0.6; margin-bottom: 24px; display: block;
     }
     .testimonial-text {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(16px, 2vw, 20px);
-      color: var(--text-main);
-      line-height: 1.65;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(16px, 2vw, 20px); color: var(--text-main);
+      line-height: 1.65; margin-bottom: 20px;
     }
     .testimonial-author {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: var(--text-secondary);
-      font-weight: 700;
-      letter-spacing: 0.04em;
+      font-family: 'Lato', sans-serif; font-size: 14px;
+      color: var(--text-secondary); font-weight: 700; letter-spacing: 0.04em;
     }
     .testimonial-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 12px;
-      object-fit: cover;
-      flex-shrink: 0;
+      width: 180px; height: 180px; border-radius: 12px;
+      object-fit: cover; flex-shrink: 0;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 768px) {
-      .testimonial-box {
-        flex-direction: column;
-        padding: 32px 24px;
-        gap: 24px;
-      }
-      .testimonial-photo {
-        width: 100%;
-        height: 220px;
-        border-radius: 10px;
-      }
+      .testimonial-box { flex-direction: column; padding: 32px 24px; gap: 24px; }
+      .testimonial-photo { width: 100%; height: 220px; }
     }
 
     /* =============================================
        SECTION 7 — FAQ
     ============================================= */
-    #faq {
-      background: var(--white);
-    }
-    .faq-list {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border-bottom: 1px solid var(--divider);
-      overflow: hidden;
-    }
-    .faq-item:first-child {
-      border-top: 1px solid var(--divider);
-    }
+    #faq { background: var(--white); }
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid var(--divider); overflow: hidden; }
+    .faq-item:first-child { border-top: 1px solid var(--divider); }
     .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 22px 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      cursor: pointer;
-      font-family: 'Lato', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text-main);
-      text-align: left;
-      transition: color 0.2s;
+      width: 100%; background: none; border: none; padding: 22px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      cursor: pointer; font-family: 'Lato', sans-serif; font-size: 16px;
+      font-weight: 700; color: var(--text-main); text-align: left; transition: color 0.2s;
     }
-    .faq-question:hover {
-      color: var(--accent);
-    }
+    .faq-question:hover { color: var(--accent); }
     .faq-arrow {
-      display: inline-block;
-      font-size: 13px;
-      color: var(--accent);
-      transition: transform 0.35s ease;
-      flex-shrink: 0;
+      display: inline-flex; align-items: center; flex-shrink: 0;
+      color: var(--accent); transition: transform 0.35s ease;
     }
-    .faq-item.open .faq-arrow {
-      transform: rotate(180deg);
-    }
-    .faq-item.open .faq-question {
-      color: var(--accent);
-    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-item.open .faq-question { color: var(--accent); }
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease, background 0.2s;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, background 0.2s;
     }
-    .faq-item.open .faq-answer {
-      max-height: 400px;
-      background: var(--bg-faq-open);
-    }
+    .faq-item.open .faq-answer { max-height: 400px; background: var(--bg-faq-open); }
     .faq-answer-inner {
-      font-family: 'Lato', sans-serif;
-      font-size: 15px;
-      color: var(--text-secondary);
-      line-height: 1.75;
+      font-family: 'Lato', sans-serif; font-size: 15px;
+      color: var(--text-secondary); line-height: 1.75;
       padding: 16px 20px 24px;
     }
 
     /* =============================================
-       SECTION 8 — FINAL CTA
+       PRICING SECTION
     ============================================= */
-    #cta-final {
-      background: var(--bg-cta);
-      padding: 100px 40px;
-      text-align: center;
+    #preco { background: #1C1C1C; padding: 90px 40px; }
+    .pricing-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.1fr;
+      gap: 52px; align-items: center;
     }
-    .cta-title {
+    .pricing-image-wrap { position: relative; }
+    .pricing-image-wrap img {
+      width: 100%; border-radius: 16px;
+      box-shadow: 0 12px 48px rgba(0,0,0,0.45);
+      object-fit: cover; max-height: 480px;
+    }
+    .pricing-img-badge {
+      position: absolute; top: 18px; left: 18px;
+      background: var(--accent); color: #fff;
+      font-family: 'Lato', sans-serif; font-size: 12px; font-weight: 700;
+      padding: 6px 14px; border-radius: 6px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .pricing-content { color: #fff; }
+    .pricing-eyebrow {
+      font-family: 'Lato', sans-serif; font-size: 13px;
+      color: var(--accent); font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px;
+    }
+    .pricing-title {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(26px, 4vw, 44px);
-      font-weight: 700;
-      color: var(--white);
-      max-width: 700px;
-      margin: 0 auto 20px;
-      line-height: 1.25;
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+      color: #fff; line-height: 1.2; margin-bottom: 24px;
     }
-    .cta-subtitle {
-      font-family: 'Lato', sans-serif;
-      font-size: 16px;
-      color: #AAAAAA;
-      max-width: 580px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
+    .pricing-includes { margin-bottom: 28px; }
+    .pricing-includes-title {
+      font-family: 'Lato', sans-serif; font-size: 14px;
+      font-weight: 700; color: #AAAAAA; margin-bottom: 12px;
+      text-transform: uppercase; letter-spacing: 0.06em;
     }
-    .cta-subtext {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #888888;
-      margin-top: 16px;
+    .pricing-includes ul { list-style: none; }
+    .pricing-includes li {
+      font-family: 'Lato', sans-serif; font-size: 14px;
+      color: #D0D0D0; padding: 5px 0;
+      display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+    }
+    .pricing-includes li .pi-check { flex-shrink: 0; margin-top: 2px; color: var(--green); }
+    .pricing-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px; padding: 22px 26px;
+      margin-bottom: 26px; text-align: center;
+    }
+    .price-from {
+      font-family: 'Lato', sans-serif; font-size: 14px; color: #888;
+    }
+    .price-old {
+      text-decoration: line-through; color: #888;
+    }
+    .price-main {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px; font-weight: 700; color: #fff;
+      line-height: 1.1; margin: 6px 0;
+    }
+    .price-cents {
+      font-size: 28px;
+    }
+    .price-installments {
+      font-family: 'Lato', sans-serif; font-size: 13px; color: #999;
+      margin-top:
+      4px;
+    }
+    .pricing-guarantee {
+      display: flex; align-items: center; gap: 10px;
+      margin-top: 18px; justify-content: center;
+    }
+    .pricing-guarantee span {
+      font-family: 'Lato', sans-serif; font-size: 13px; color: #888;
+    }
+    .pricing-cta-wrap { text-align: center; }
+    .pricing-trust {
+      margin-top: 14px;
+      font-family: 'Lato', sans-serif; font-size: 12px; color: #666;
+      line-height: 1.6;
     }
 
     @media (max-width: 768px) {
-      #cta-final {
-        padding: 70px 20px;
-      }
+      #preco { padding: 70px 20px; }
+      .pricing-inner { grid-template-columns: 1fr; gap: 36px; }
+      .pricing-image-wrap img { max-height: 280px; }
+      .price-main { font-size: 44px; }
     }
+
+    /* =============================================
+       SECTION 8 — CTA FINAL
+    ============================================= */
+    #cta-final { background: var(--bg-cta); padding: 100px 40px; text-align: center; }
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(24px, 4vw, 44px); font-weight: 700;
+      color: var(--white); max-width: 700px; margin: 0 auto 20px; line-height: 1.25;
+    }
+    .cta-subtitle {
+      font-family: 'Lato', sans-serif; font-size: 16px; color: #AAAAAA;
+      max-width: 560px; margin: 0 auto 36px; line-height: 1.7;
+    }
+    .cta-subtext {
+      font-family: 'Lato', sans-serif; font-size: 13px; color: #777; margin-top: 16px;
+    }
+
+    @media (max-width: 768px) { #cta-final { padding: 70px 20px; } }
 
     /* =============================================
        FOOTER
     ============================================= */
-    footer {
-      background: #1A1A1A;
-      padding: 48px 40px 32px;
-    }
+    footer { background: #1A1A1A; padding: 48px 40px 32px; }
     .footer-top {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid #333333;
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+      padding-bottom: 32px; border-bottom: 1px solid #333;
     }
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px;
-      color: var(--white);
-      font-weight: 600;
-    }
-    .footer-links {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-    .footer-links a {
-      font-family: 'Lato', sans-serif;
-      font-size: 14px;
-      color: #AAAAAA;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-    .footer-bottom {
-      max-width: 1100px;
-      margin: 24px auto 0;
-      text-align: center;
-    }
-    .footer-copy {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #666666;
-      margin-bottom: 6px;
-    }
-    .footer-tagline {
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      color: #555555;
-    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 14px; color: #fff; font-weight: 600; }
+    .footer-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-family: 'Lato', sans-serif; font-size: 14px; color: #AAAAAA; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom { max-width: 1100px; margin: 24px auto 0; text-align: center; }
+    .footer-copy { font-family: 'Lato', sans-serif; font-size: 13px; color: #666; margin-bottom: 6px; }
+    .footer-tagline { font-family: 'Lato', sans-serif; font-size: 13px; color: #555; }
+    .footer-contact { font-family: 'Lato', sans-serif; font-size: 13px; color: #777; margin-top: 10px; }
+    .footer-contact a { color: var(--accent); transition: color 0.2s; }
+    .footer-contact a:hover { color: #fff; }
 
     @media (max-width: 768px) {
-      footer {
-        padding: 40px 20px 24px;
-      }
-      .footer-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-      }
-      .footer-links {
-        flex-wrap: wrap;
-        gap: 16px;
-      }
+      footer { padding: 40px 20px 24px; }
+      .footer-top { flex-direction: column; align-items: flex-start; }
     }
 
     /* =============================================
-       WHATSAPP FLOATING BUTTON
+       SVG ICON HELPERS
     ============================================= */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 9999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease;
-    }
-    .whatsapp-float.visible {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .whatsapp-float a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      background: #25D366;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      position: relative;
-      animation: waPulse 2.4s ease-in-out infinite;
-      transition: transform 0.2s;
-    }
-    .whatsapp-float a:hover {
-      transform: scale(1.1);
-      animation: none;
-      box-shadow: 0 6px 24px rgba(37,211,102,0.55);
-    }
-    .whatsapp-float svg {
-      width: 30px;
-      height: 30px;
-      fill: #ffffff;
-    }
-    .whatsapp-tooltip {
-      position: absolute;
-      right: 68px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #1A1A1A;
-      color: var(--white);
-      font-family: 'Lato', sans-serif;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 7px 12px;
-      border-radius: 6px;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-    }
-    .whatsapp-tooltip::after {
-      content: '';
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-      border: 6px solid transparent;
-      border-left-color: #1A1A1A;
-    }
-    .whatsapp-float a:hover .whatsapp-tooltip {
-      opacity: 1;
-    }
-    @keyframes waPulse {
-      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
-      50% { box-shadow: 0 4px 30px rgba(37,211,102,0.7); }
-    }
-
-    @media (max-width: 768px) {
-      .whatsapp-float {
-        bottom: 18px;
-        right: 18px;
-      }
-    }
+    .icon-accent { color: var(--accent); }
+    .icon-green { color: var(--green); }
   </style>
 </head>
 <body>
 
   <!-- =============================================
-       WHATSAPP FLOATING BUTTON
-  ============================================= -->
-  <div class="whatsapp-float" id="whatsappFloat">
-    <a href="https://wa.me/5599991018907" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
-      <span class="whatsapp-tooltip">Falar no WhatsApp</span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-    </a>
-  </div>
-
-  <!-- =============================================
        NAVBAR
   ============================================= -->
   <nav id="navbar" role="navigation" aria-label="Menu principal">
-    <div class="nav-logo">Renê & Samara ✦ Papelaria de Casamento</div>
+    <div class="nav-logo">Papelaria de Casamento — Diário de Noiva da Sam</div>
     <ul class="nav-links">
       <li><a href="#o-kit">O Kit</a></li>
       <li><a href="#como-funciona">Como Funciona</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="#" class="nav-cta">Comprar</a></li>
+      <li><a href="https://chk.eduzz.com/kaykhkej" target="_blank" rel="noopener" class="nav-cta">Comprar agora</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu de navegação mobile">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navegação mobile">
     <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fechar menu">✕</button>
     <a href="#o-kit" class="mobile-link">O Kit</a>
     <a href="#como-funciona" class="mobile-link">Como Funciona</a>
     <a href="#faq" class="mobile-link">FAQ</a>
-    <a href="#" class="mobile-link mobile-cta">Comprar</a>
+    <a href="https://chk.eduzz.com/kaykhkej" target="_blank" rel="noopener" class="mobile-link mobile-cta">Comprar agora</a>
   </div>
 
   <!-- =============================================
@@ -1097,104 +692,174 @@
   ============================================= -->
   <section id="hero" aria-label="Apresentação do produto">
     <div class="hero-grid">
-      <!-- Coluna de texto -->
+
+      <!-- TEXTO -->
       <div class="hero-text">
-        <div class="hero-badge">✦ Usado em um casamento real ✦</div>
+
+        <!-- Mobile-only: foto aparece ANTES de qualquer título -->
+        <img
+          src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
+          alt="Kit de papelaria de casamento Diário de Noiva da Sam"
+          class="hero-mobile-img"
+          loading="eager"
+        />
+
+        <div class="hero-badge">✦ Usado no casamento de Samara e Renê ✦</div>
+
         <h1 class="hero-title">
-          Papelaria de Casamento Completa e Editável — do Convite ao Obrigado pela Presença
+          Templates Editáveis para Papelaria de Casamento Minimalista
         </h1>
+
         <p class="hero-subtitle">
           O kit de templates digitais usado no casamento de Renê & Samara
           (@diariodenoivadasam). Editável no Canva, pronto para imprimir —
           tudo combinando, do início ao fim do seu grande dia.
         </p>
+
         <ul class="hero-benefits" aria-label="Benefícios do kit">
-          <li><span class="check">✔</span> Templates 100% editáveis no Canva</li>
-          <li><span class="check">✔</span> Identidade visual cristã, minimalista e elegante</li>
-          <li><span class="check">✔</span> Economia de tempo e dinheiro com designer</li>
-          <li><span class="check">✔</span> Acesso imediato após a compra</li>
+          <li>
+            <span class="check-icon">
+              <!-- Check icon SVG -->
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="9" cy="9" r="9" fill="#C49A6C" fill-opacity="0.15"/>
+                <path d="M5 9.5L7.5 12L13 6.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Templates 100% editáveis no Canva
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="9" cy="9" r="9" fill="#C49A6C" fill-opacity="0.15"/>
+                <path d="M5 9.5L7.5 12L13 6.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Identidade visual cristã, minimalista e elegante
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="9" cy="9" r="9" fill="#C49A6C" fill-opacity="0.15"/>
+                <path d="M5 9.5L7.5 12L13 6.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Economia de tempo e dinheiro com designer
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="9" cy="9" r="9" fill="#C49A6C" fill-opacity="0.15"/>
+                <path d="M5 9.5L7.5 12L13 6.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Acesso imediato após a compra
+          </li>
         </ul>
-        <a href="#" class="btn-primary" aria-label="Adquirir kit de papelaria de casamento">
-          ✦ Quero meu kit de papelaria
-        </a>
+
+        <div class="btn-center-wrap" style="text-align:left;">
+          <a href="https://chk.eduzz.com/kaykhkej" target="_blank" rel="noopener"
+            class="btn-buy btn-lg"
+            aria-label="Adquirir kit de papelaria agora">
+            ✦ Quero meu kit — acesso imediato
+          </a>
+        </div>
+
         <p class="hero-subtext">Produto digital · Editável no Canva · Envio imediato por e-mail</p>
         <a href="#o-kit" class="hero-scroll-link">Ver tudo o que inclui o kit ↓</a>
       </div>
 
-      <!-- Coluna do carrossel -->
+      <!-- CAROUSEL — desktop only -->
       <div class="hero-carousel" aria-label="Imagens do kit de papelaria">
-        <div class="hero-carousel-slides">
+        <div class="hero-carousel-inner">
           <div class="hero-slide active">
-            <img
-              src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
-              alt="Kit de papelaria de casamento — convite minimalista"
-              loading="lazy"
-            />
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
+              alt="Convite de casamento minimalista do kit" loading="eager" />
           </div>
           <div class="hero-slide">
-            <img
-              src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.40.49.jpg?w=1024&allow_lossy=1"
-              alt="Kit de papelaria de casamento — jornal dos noivos"
-              loading="lazy"
-            />
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.40.49.jpg?w=1024&allow_lossy=1"
+              alt="Jornal dos noivos do kit de papelaria" loading="lazy" />
           </div>
           <div class="hero-slide">
-            <img
-              src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39.jpg?w=1024&allow_lossy=1"
-              alt="Kit de papelaria de casamento — mesa decorada"
-              loading="lazy"
-            />
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39.jpg?w=1024&allow_lossy=1"
+              alt="Mesa decorada com papelaria do casamento" loading="lazy" />
           </div>
         </div>
-        <div class="hero-dots" role="tablist" aria-label="Navegação do carrossel">
+        <div class="hero-dots" role="tablist" aria-label="Navegar pelo carrossel">
           <button class="hero-dot active" data-index="0" role="tab" aria-label="Imagem 1" aria-selected="true"></button>
           <button class="hero-dot" data-index="1" role="tab" aria-label="Imagem 2" aria-selected="false"></button>
           <button class="hero-dot" data-index="2" role="tab" aria-label="Imagem 3" aria-selected="false"></button>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- =============================================
        SECTION 2 — BENEFÍCIOS
   ============================================= -->
-  <section id="beneficios" aria-label="Benefícios do kit de papelaria">
+  <section id="beneficios" aria-label="Benefícios do kit">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Por que este kit facilita o seu casamento?</h2>
       <div class="section-divider"></div>
       <div class="benefits-grid">
-        <div class="benefit-card animate-on-scroll" style="transition-delay: 0.1s;">
-          <div class="benefit-icon" aria-hidden="true">⏳</div>
+
+        <!-- Card 1 -->
+        <div class="benefit-card animate-on-scroll" style="transition-delay:0.1s">
+          <div class="benefit-icon">
+            <!-- Clock icon -->
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="22" cy="22" r="20" stroke="#C49A6C" stroke-width="2"/>
+              <path d="M22 12V22L28 27" stroke="#C49A6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="benefit-title">Praticidade imediata</h3>
-          <p class="benefit-text">
-            Templates prontos para editar. Menos decisões, mais tempo para curtir
-            cada etapa dos seus preparativos de casamento.
-          </p>
+          <p class="benefit-text">Templates prontos para editar. Menos decisões, mais tempo para curtir cada etapa dos seus preparativos de casamento.</p>
         </div>
-        <div class="benefit-card animate-on-scroll" style="transition-delay: 0.2s;">
-          <div class="benefit-icon" aria-hidden="true">💰</div>
+
+        <!-- Card 2 -->
+        <div class="benefit-card animate-on-scroll" style="transition-delay:0.2s">
+          <div class="benefit-icon">
+            <!-- Coin / savings icon -->
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="22" cy="22" r="20" stroke="#C49A6C" stroke-width="2"/>
+              <path d="M22 13V31M18 17h5.5a3.5 3.5 0 010 7H18m0 0h6" stroke="#C49A6C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="benefit-title">Economia real</h3>
-          <p class="benefit-text">
-            Você não precisa contratar um designer para cada item separadamente.
-            Um kit resolve convites, sinalização, menu, votos e muito mais.
-          </p>
+          <p class="benefit-text">Você não precisa contratar um designer para cada item separadamente. Um kit resolve convites, sinalização, menu, votos e muito mais.</p>
         </div>
-        <div class="benefit-card animate-on-scroll" style="transition-delay: 0.3s;">
-          <div class="benefit-icon" aria-hidden="true">✨</div>
+
+        <!-- Card 3 -->
+        <div class="benefit-card animate-on-scroll" style="transition-delay:0.3s">
+          <div class="benefit-icon">
+            <!-- Diamond / sparkle icon -->
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="22" cy="22" r="20" stroke="#C49A6C" stroke-width="2"/>
+              <path d="M22 12l3.5 6h7L27 24l2.5 8L22 28l-7.5 4L17 24l-5.5-6H19L22 12z" stroke="#C49A6C" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3 class="benefit-title">Identidade visual única</h3>
-          <p class="benefit-text">
-            Estilo cristão minimalista com versículos e frases com propósito.
-            Todos os materiais conversando entre si, do convite ao quadro de agradecimento.
-          </p>
+          <p class="benefit-text">Estilo cristão minimalista com versículos e frases com propósito. Todos os materiais conversando entre si, do convite ao quadro de agradecimento.</p>
         </div>
+
       </div>
+
+      <!-- Botão de compra após os cards de benefícios -->
+      <div class="benefits-cta-wrap animate-on-scroll" style="transition-delay:0.4s">
+        <a href="https://chk.eduzz.com/kaykhkej" target="_blank" rel="noopener"
+          class="btn-buy btn-lg"
+          aria-label="Garantir kit completo agora">
+          Garantir meu kit completo agora →
+        </a>
+      </div>
+
     </div>
   </section>
 
   <!-- =============================================
        SECTION 3 — O QUE ESTÁ INCLUSO
   ============================================= -->
-  <section id="o-kit" aria-label="Itens inclusos no kit de papelaria">
+  <section id="o-kit" aria-label="Itens inclusos no kit">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Tudo o que você recebe no seu kit de Papelaria de Casamento</h2>
       <div class="section-divider"></div>
@@ -1205,14 +870,13 @@
 
       <div class="kit-grid">
 
-        <!-- Card 1 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.05s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-3.jpg?w=683&allow_lossy=1"
-            alt="Centro de Mesa Triangular para casamento cristão"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 1 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.05s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-3.jpg?w=683&allow_lossy=1"
+              alt="Centro de Mesa Triangular" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">1</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Centro de Mesa Triangular</h3>
             <p class="kit-card-desc">Modelo com versículo bíblico para decorar e organizar as mesas dos convidados com elegância e propósito.</p>
@@ -1220,14 +884,13 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.1s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
-            alt="Convite de Casamento minimalista editável"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 2 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.1s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
+              alt="Convite de Casamento" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">2</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Convite de Casamento</h3>
             <p class="kit-card-desc">Arte para convite físico com estilo minimalista. Personalize nomes, data, horário, local e versículo.</p>
@@ -1235,14 +898,13 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.15s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
-            alt="Folha de Informações e Detalhes do casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 3 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.15s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
+              alt="Folha de Informações e Detalhes" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">3</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Folha de Informações e Detalhes</h3>
             <p class="kit-card-desc">Complemento do convite com trajes, endereço e orientações para os convidados.</p>
@@ -1250,14 +912,13 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.2s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-11.33.38.jpg?w=1024&allow_lossy=1"
-            alt="Ventarola para cerimônia de casamento ao ar livre"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 4 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.2s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-11.33.38.jpg?w=1024&allow_lossy=1"
+              alt="Ventarola para cerimônia" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">4</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Ventarola</h3>
             <p class="kit-card-desc">Perfeita para cerimônias ao ar livre ou locais quentes. Conteúdo pronto para impressão.</p>
@@ -1265,14 +926,13 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.25s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.40.49.jpg?w=1024&allow_lossy=1"
-            alt="Jornal A4 dos Noivos para casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 5 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.25s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.40.49.jpg?w=1024&allow_lossy=1"
+              alt="Jornal A4 dos Noivos" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">5</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Jornal A4 dos Noivos</h3>
             <p class="kit-card-desc">Jornal do casamento em tamanho A4 com curiosidades, história e fatos do casal para entreter os convidados.</p>
@@ -1280,14 +940,13 @@
           </div>
         </div>
 
-        <!-- Card 6 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.3s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-11.33.38-1.jpg?w=683&allow_lossy=1"
-            alt="Caderno de Votos para noivos"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 6 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.3s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-11.33.38-1.jpg?w=683&allow_lossy=1"
+              alt="Caderno de Votos dos noivos" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">6</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Caderno de Votos</h3>
             <p class="kit-card-desc">Template de caderninho para os votos dos noivos — delicado e personalizado.</p>
@@ -1295,14 +954,13 @@
           </div>
         </div>
 
-        <!-- Card 7 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.35s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.40.01.jpeg?w=768&allow_lossy=1"
-            alt="Convite Chá Doce Lar com identidade visual do casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 7 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.35s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.40.01.jpeg?w=768&allow_lossy=1"
+              alt="Convite Chá Doce Lar" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">7</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Convite Chá Doce Lar</h3>
             <p class="kit-card-desc">Convite para o chá de casa nova, mantendo a identidade visual do casamento.</p>
@@ -1310,14 +968,13 @@
           </div>
         </div>
 
-        <!-- Card 8 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.4s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.59.46-1.jpg?w=1024&allow_lossy=1"
-            alt="Quadro Agradecemos sua Presença para casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 8 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.4s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.59.46-1.jpg?w=1024&allow_lossy=1"
+              alt="Quadro Agradecemos sua Presença" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">8</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Quadro Agradecemos sua Presença</h3>
             <p class="kit-card-desc">Arte de agradecimento para a entrada da festa ou mesa de doces.</p>
@@ -1325,14 +982,13 @@
           </div>
         </div>
 
-        <!-- Card 9 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.45s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.27.25.jpg?w=1024&allow_lossy=1"
-            alt="Adesivo Baú do Prêmio com Mateus 6:21"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 9 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.45s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.27.25.jpg?w=1024&allow_lossy=1"
+              alt="Adesivo Baú do Prêmio" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">9</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Adesivo Baú do Prêmio</h3>
             <p class="kit-card-desc">Arte com Mateus 6:21 para baús, caixas de presente ou dinâmicas com convidados.</p>
@@ -1340,14 +996,13 @@
           </div>
         </div>
 
-        <!-- Card 10 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.5s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39.jpg?w=1024&allow_lossy=1"
-            alt="Lágrimas de Alegria template para casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 10 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.5s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39.jpg?w=1024&allow_lossy=1"
+              alt="Lágrimas de Alegria" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">10</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Lágrimas de Alegria</h3>
             <p class="kit-card-desc">Template para embalagem de lenços, personalizável com nomes e data.</p>
@@ -1355,14 +1010,13 @@
           </div>
         </div>
 
-        <!-- Card 11 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.55s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-2.jpg?w=683&allow_lossy=1"
-            alt="Menu de casamento editável para mesas dos convidados"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 11 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.55s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-2.jpg?w=683&allow_lossy=1"
+              alt="Menu de casamento" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">11</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Menu</h3>
             <p class="kit-card-desc">Modelo de cardápio para as mesas dos convidados, com entrada, prato principal, bebidas e sobremesas.</p>
@@ -1370,14 +1024,13 @@
           </div>
         </div>
 
-        <!-- Card 12 -->
-        <div class="kit-card animate-on-scroll" style="transition-delay: 0.6s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.40.01-1.jpeg?w=768&allow_lossy=1"
-            alt="Manual dos Padrinhos para casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 12 -->
+        <div class="kit-card animate-on-scroll" style="transition-delay:0.6s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.40.01-1.jpeg?w=768&allow_lossy=1"
+              alt="Manual dos Padrinhos" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">12</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">Manual dos Padrinhos</h3>
             <p class="kit-card-desc">Guia especial para os padrinhos com tudo o que precisam saber para o grande dia.</p>
@@ -1385,14 +1038,13 @@
           </div>
         </div>
 
-        <!-- Card 13 — BÔNUS -->
-        <div class="kit-card bonus-card animate-on-scroll" style="transition-delay: 0.65s;">
-          <img
-            src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-17.14.20-1.jpg?w=683&allow_lossy=1"
-            alt="Bônus — Arte Quadro de Boas-Vindas para casamento"
-            class="kit-card-img"
-            loading="lazy"
-          />
+        <!-- 13 — BÔNUS -->
+        <div class="kit-card bonus-card animate-on-scroll" style="transition-delay:0.65s">
+          <div class="kit-card-img-wrap">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-17.14.20-1.jpg?w=683&allow_lossy=1"
+              alt="Bônus — Quadro de Boas-Vindas" class="kit-card-img" loading="lazy" />
+            <div class="kit-card-number">13</div>
+          </div>
           <div class="kit-card-body">
             <h3 class="kit-card-name">✦ BÔNUS — Arte Quadro de Boas-Vindas</h3>
             <p class="kit-card-desc">Arte extra com a identidade visual do casamento para o quadro de recepção da cerimônia.</p>
@@ -1402,48 +1054,45 @@
 
       </div><!-- /.kit-grid -->
 
-      <!-- Info box -->
       <div class="kit-info-box animate-on-scroll">
-        📦 <strong>Formato do produto:</strong> Arquivos digitais editáveis no Canva ·
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="display:inline;vertical-align:middle;margin-right:6px;" aria-hidden="true">
+          <rect x="2" y="7" width="16" height="11" rx="2" stroke="#C49A6C" stroke-width="1.6"/>
+          <path d="M6 7V5a4 4 0 018 0v2" stroke="#C49A6C" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <strong>Formato do produto:</strong> Arquivos digitais editáveis no Canva ·
         Você recebe os links, personaliza e envia para a gráfica ou imprime em casa
       </div>
+
     </div>
   </section>
 
   <!-- =============================================
        SECTION 4 — COMO FUNCIONA
   ============================================= -->
-  <section id="como-funciona" aria-label="Como usar o kit de papelaria de casamento">
+  <section id="como-funciona" aria-label="Como usar o kit de papelaria">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Como usar sua papelaria de casamento</h2>
       <div class="section-divider"></div>
-      <div class="steps-wrapper">
-        <div class="steps-grid">
-          <div class="step-item animate-on-scroll" style="transition-delay: 0.1s;">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Compre e receba</h3>
-            <p class="step-text">
-              Após a confirmação da compra, você recebe por e-mail os links de acesso
-              aos seus templates digitais no Canva.
-            </p>
-          </div>
-          <div class="step-item animate-on-scroll" style="transition-delay: 0.2s;">
-            <div class="step-number">2</div>
-            <h3 class="step-title">Edite no Canva</h3>
-            <p class="step-text">
-              Abra os templates, altere nomes, datas, locais, versículos e cores.
-              Sem precisar de conhecimento em design — é tudo intuitivo.
-            </p>
-          </div>
-          <div class="step-item animate-on-scroll" style="transition-delay: 0.3s;">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Imprima e use</h3>
-            <p class="step-text">
-              Exporte em PDF, envie para a gráfica de sua cidade ou imprima em casa
-              em papel de boa gramatura. Pronto para o grande dia.
-            </p>
-          </div>
+      <div class="steps-grid">
+
+        <div class="step-item animate-on-scroll" style="transition-delay:0.1s">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Compre e receba</h3>
+          <p class="step-text">Após a confirmação da compra, você recebe por e-mail os links de acesso aos seus templates digitais no Canva.</p>
         </div>
+
+        <div class="step-item animate-on-scroll" style="transition-delay:0.2s">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Edite no Canva</h3>
+          <p class="step-text">Abra os templates, altere nomes, datas, locais, versículos e cores. Sem precisar de conhecimento em design — é tudo intuitivo.</p>
+        </div>
+
+        <div class="step-item animate-on-scroll" style="transition-delay:0.3s">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Imprima e use</h3>
+          <p class="step-text">Exporte em PDF, envie para a gráfica de sua cidade ou imprima em casa em papel de boa gramatura. Pronto para o grande dia.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1451,7 +1100,7 @@
   <!-- =============================================
        SECTION 5 — GALERIA
   ============================================= -->
-  <section id="galeria" aria-label="Galeria de fotos reais do kit de papelaria">
+  <section id="galeria" aria-label="Galeria de fotos reais do kit">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Papelaria real, usada em um casamento de verdade</h2>
       <div class="section-divider"></div>
@@ -1462,58 +1111,37 @@
 
       <div class="gallery-carousel animate-on-scroll">
         <div class="gallery-track" id="galleryTrack">
-          <div class="gallery-slides" id="gallerySlides">
 
-            <div class="gallery-slide active">
-              <img
-                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
-                alt="Foto real do kit — convite de casamento Renê e Samara"
-                loading="lazy"
-              />
-            </div>
-            <div class="gallery-slide">
-              <img
-                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.40.49.jpg?w=1024&allow_lossy=1"
-                alt="Foto real do kit — jornal A4 dos noivos"
-                loading="lazy"
-              />
-            </div>
-            <div class="gallery-slide">
-              <img
-                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39.jpg?w=1024&allow_lossy=1"
-                alt="Foto real do kit — papelaria na mesa de casamento"
-                loading="lazy"
-              />
-            </div>
-            <div class="gallery-slide">
-              <img
-                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.40.01.jpeg?w=768&allow_lossy=1"
-                alt="Foto real do kit — convite chá doce lar"
-                loading="lazy"
-              />
-            </div>
-            <div class="gallery-slide">
-              <img
-                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-3.jpg?w=683&allow_lossy=1"
-                alt="Foto real do kit — centro de mesa triangular"
-                loading="lazy"
-              />
-            </div>
-            <div class="gallery-slide">
-              <img
-                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-17.14.20-1.jpg?w=683&allow_lossy=1"
-                alt="Foto real do kit — quadro de boas-vindas"
-                loading="lazy"
-              />
-            </div>
+          <div class="gallery-slide active">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.33.30.jpeg?w=768&allow_lossy=1"
+              alt="Convite de casamento Renê e Samara" loading="lazy" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.40.49.jpg?w=1024&allow_lossy=1"
+              alt="Jornal A4 dos noivos" loading="lazy" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39.jpg?w=1024&allow_lossy=1"
+              alt="Papelaria na mesa do casamento" loading="lazy" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-21-at-11.40.01.jpeg?w=768&allow_lossy=1"
+              alt="Convite Chá Doce Lar" loading="lazy" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-3.jpg?w=683&allow_lossy=1"
+              alt="Centro de mesa triangular" loading="lazy" />
+          </div>
+          <div class="gallery-slide">
+            <img src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-17.14.20-1.jpg?w=683&allow_lossy=1"
+              alt="Quadro de boas-vindas do casamento" loading="lazy" />
+          </div>
 
-          </div><!-- /.gallery-slides -->
+          <button class="gallery-btn gallery-btn-prev" id="galleryPrev" aria-label="Foto anterior">&#8592;</button>
+          <button class="gallery-btn gallery-btn-next" id="galleryNext" aria-label="Próxima foto">&#8594;</button>
+        </div>
 
-          <button class="gallery-btn gallery-btn-prev" id="galleryPrev" aria-label="Imagem anterior">&#8592;</button>
-          <button class="gallery-btn gallery-btn-next" id="galleryNext" aria-label="Próxima imagem">&#8594;</button>
-        </div><!-- /.gallery-track -->
-
-        <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Navegação da galeria">
+        <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Navegar pela galeria">
           <button class="gallery-dot active" data-index="0" role="tab" aria-label="Foto 1" aria-selected="true"></button>
           <button class="gallery-dot" data-index="1" role="tab" aria-label="Foto 2" aria-selected="false"></button>
           <button class="gallery-dot" data-index="2" role="tab" aria-label="Foto 3" aria-selected="false"></button>
@@ -1521,14 +1149,15 @@
           <button class="gallery-dot" data-index="4" role="tab" aria-label="Foto 5" aria-selected="false"></button>
           <button class="gallery-dot" data-index="5" role="tab" aria-label="Foto 6" aria-selected="false"></button>
         </div>
-      </div><!-- /.gallery-carousel -->
+      </div>
+
     </div>
   </section>
 
   <!-- =============================================
        SECTION 6 — DEPOIMENTO
   ============================================= -->
-  <section id="depoimento" aria-label="Depoimento dos criadores do kit">
+  <section id="depoimento" aria-label="Depoimento dos criadores">
     <div class="testimonial-wrapper">
       <div class="testimonial-box animate-on-scroll">
         <div class="testimonial-content">
@@ -1542,10 +1171,7 @@
         </div>
         <img
           src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-17.14.20-1.jpg?w=683&allow_lossy=1"
-          alt="Foto de Renê e Samara — criadores do kit de papelaria de casamento"
-          class="testimonial-photo"
-          loading="lazy"
-        />
+          alt="Foto de Renê e Samara" class="testimonial-photo" loading="lazy" />
       </div>
     </div>
   </section>
@@ -1553,7 +1179,7 @@
   <!-- =============================================
        SECTION 7 — FAQ
   ============================================= -->
-  <section id="faq" aria-label="Perguntas frequentes sobre o kit de papelaria">
+  <section id="faq" aria-label="Perguntas frequentes">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Perguntas Frequentes</h2>
       <div class="section-divider"></div>
@@ -1563,11 +1189,15 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             O que exatamente eu vou receber ao comprar o kit?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              Você recebe 13 templates digitais de papelaria de casamento (convite, folha de detalhes, centro de mesa triangular, jornal A4, ventarola, lágrimas de alegria, convite Chá Doce Lar, caderno de votos, manual dos padrinhos, adesivo baú do prêmio, quadro de agradecimento, menu e arte bônus do quadro de boas-vindas). Todos editáveis no Canva.
+              Você recebe 13 templates digitais de papelaria de casamento: convite, folha de detalhes, centro de mesa triangular, jornal A4, ventarola, lágrimas de alegria, convite Chá Doce Lar, caderno de votos, manual dos padrinhos, adesivo baú do prêmio, quadro de agradecimento, menu e a arte bônus do quadro de boas-vindas. Todos editáveis no Canva.
             </div>
           </div>
         </div>
@@ -1575,7 +1205,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             O produto é físico ou digital?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1587,7 +1221,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Preciso saber usar programas de design para editar?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1599,7 +1237,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Posso mudar as cores e fontes dos templates?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1611,7 +1253,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Os versículos e frases cristãs podem ser trocados?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1623,7 +1269,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Como faço para imprimir depois de editar?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1635,7 +1285,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Em quanto tempo eu recebo o acesso?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1647,11 +1301,15 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Posso usar este kit para mais de um casamento?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              O kit é indicado para uso pessoal (o seu próprio casamento). Se você trabalha com casamentos e deseja utilizá-lo para clientes, entre em contato para conversarmos sobre licença de uso.
+              O kit é indicado para uso pessoal (o seu próprio casamento). Se você trabalha com casamentos e deseja utilizá-lo para clientes, entre em contato pelo e-mail lima03samara@gmail.com para conversarmos sobre licença de uso.
             </div>
           </div>
         </div>
@@ -1659,11 +1317,15 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             E se eu tiver dificuldades para editar no Canva?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              Você receberá orientações básicas junto com o kit. Para dúvidas, pode entrar em contato via WhatsApp: (99) 91018-9070. O próprio Canva também possui uma central de ajuda completa em português.
+              Você receberá orientações básicas junto com o kit. Para dúvidas, entre em contato pelo e-mail lima03samara@gmail.com. O próprio Canva também possui uma central de ajuda completa em português.
             </div>
           </div>
         </div>
@@ -1671,7 +1333,11 @@
         <div class="faq-item" role="listitem">
           <button class="faq-question" aria-expanded="false">
             Posso usar o kit se meu casamento não for cristão?
-            <span class="faq-arrow" aria-hidden="true">▼</span>
+            <span class="faq-arrow" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 5.5L8 10.5L13 5.5" stroke="#C49A6C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
@@ -1685,9 +1351,131 @@
   </section>
 
   <!-- =============================================
+       PRICING SECTION
+  ============================================= -->
+  <section id="preco" aria-label="Preço e oferta do kit">
+    <div class="pricing-inner">
+
+      <!-- Foto do produto -->
+      <div class="pricing-image-wrap animate-on-scroll">
+        <span class="pricing-img-badge">Kit Completo</span>
+        <img
+          src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-17.14.20-1.jpg?w=683&allow_lossy=1"
+          alt="Kit de papelaria de casamento — Diário de Noiva da Sam"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Conteúdo de preço -->
+      <div class="pricing-content animate-on-scroll" style="transition-delay:0.15s">
+        <p class="pricing-eyebrow">✦ Oferta especial de lançamento</p>
+        <h2 class="pricing-title">
+          Kit Completo de Papelaria de Casamento — 13 Templates Editáveis no Canva
+        </h2>
+
+        <div class="pricing-includes">
+          <p class="pricing-includes-title">O que você recebe:</p>
+          <ul>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Convite + Folha de Informações e Detalhes
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Centro de Mesa Triangular + Menu
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Jornal A4 dos Noivos + Ventarola
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Caderno de Votos + Manual dos Padrinhos
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Lágrimas de Alegria + Adesivo Baú do Prêmio
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Quadro de Agradecimento + Convite Chá Doce Lar
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <strong style="color:#fff;">✦ BÔNUS:</strong>&nbsp;Arte Quadro de Boas-Vindas
+            </li>
+            <li>
+              <span class="pi-check">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+                  <path d="M2.5 8L6 11.5L12.5 4" stroke="#27AE60" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Acesso imediato por e-mail após a compra
+            </li>
+          </ul>
+        </div>
+
+        <div class="pricing-box">
+          <p class="price-from">De <span class="price-old">R$ 97,00</span> por apenas</p>
+          <p class="price-main">R$&nbsp;47<span class="price-cents">,00</span></p>
+          <p class="price-installments">ou em até 3× sem juros no cartão</p>
+          <div class="pricing-guarantee">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+              <path d="M9 1.5L2.5 4.5V9C2.5 12.5 5.5 15.5 9 16.5C12.5 15.5 15.5 12.5 15.5 9V4.5L9 1.5Z" stroke="#C49A6C" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M6 9.5L8 11.5L12 7" stroke="#C49A6C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Compra segura · Produto digital · Entrega imediata</span>
+          </div>
+        </div>
+
+        <div class="pricing-cta-wrap">
+          <a href="https://chk.eduzz.com/kaykhkej" target="_blank" rel="noopener"
+            class="btn-buy btn-xl"
+            aria-label="Comprar kit por R$ 47,00">
+            Sim, quero meu kit por R$ 47,00 →
+          </a>
+          <p class="pricing-trust">
+            Produto digital · Links enviados para o seu e-mail imediatamente após a confirmação do pagamento<br/>
+            Dúvidas? <a href="mailto:lima03samara@gmail.com" style="color:#C49A6C;">lima03samara@gmail.com</a>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
        SECTION 8 — CTA FINAL
   ============================================= -->
-  <section id="cta-final" aria-label="Chamada para ação — adquirir o kit">
+  <section id="cta-final" aria-label="Chamada final para ação">
     <h2 class="cta-title animate-on-scroll">
       Pronta para ter uma papelaria de casamento linda, prática e acessível?
     </h2>
@@ -1695,10 +1483,16 @@
       Garanta agora o kit completo de templates editáveis usados no casamento de Renê & Samara.
       Edite hoje, imprima esta semana, use no seu grande dia.
     </p>
-    <a href="#" class="btn-primary animate-on-scroll" style="font-size: 18px; padding: 18px 40px;" aria-label="Garantir kit de papelaria de casamento agora">
-      ✦ Garantir meu kit agora
-    </a>
-    <p class="cta-subtext animate-on-scroll">Produto digital · Acesso enviado por e-mail após confirmação da compra</p>
+    <div class="animate-on-scroll">
+      <a href="https://chk.eduzz.com/kaykhkej" target="_blank" rel="noopener"
+        class="btn-buy btn-xl"
+        aria-label="Comprar kit agora">
+        Comprar agora — entrega imediata
+      </a>
+    </div>
+    <p class="cta-subtext animate-on-scroll">
+      Produto digital · Acesso enviado por e-mail após confirmação da compra
+    </p>
   </section>
 
   <!-- =============================================
@@ -1706,7 +1500,7 @@
   ============================================= -->
   <footer role="contentinfo">
     <div class="footer-top">
-      <div class="footer-logo">Renê & Samara ✦ Papelaria de Casamento</div>
+      <div class="footer-logo">Papelaria de Casamento — Diário de Noiva da Sam</div>
       <ul class="footer-links">
         <li><a href="#o-kit">O Kit</a></li>
         <li><a href="#como-funciona">Como Funciona</a></li>
@@ -1714,8 +1508,12 @@
       </ul>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 Papelaria de Casamento – Renê & Samara. Todos os direitos reservados.</p>
+      <p class="footer-copy">© 2026 Papelaria de Casamento – Diário de Noiva da Sam. Todos os direitos reservados.</p>
       <p class="footer-tagline">Produto digital. Editável no Canva. Feito com ✦ para o seu grande dia.</p>
+      <p class="footer-contact">
+        Suporte:
+        <a href="mailto:lima03samara@gmail.com">lima03samara@gmail.com</a>
+      </p>
     </div>
   </footer>
 
@@ -1724,25 +1522,20 @@
   ============================================= -->
   <script>
     /* =============================================
-       1. NAVBAR — scroll effect + hamburger
+       1. NAVBAR — scroll + hamburger
     ============================================= */
     (function () {
-      const navbar = document.getElementById('navbar');
-      const hamburger = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobileMenu');
-      const mobileMenuClose = document.getElementById('mobileMenuClose');
-      const mobileLinks = document.querySelectorAll('.mobile-link');
+      var navbar = document.getElementById('navbar');
+      var hamburger = document.getElementById('hamburger');
+      var mobileMenu = document
+.getElementById('mobileMenu');
+      var mobileMenuClose = document.getElementById('mobileMenuClose');
+      var mobileLinks = document.querySelectorAll('.mobile-link');
 
-      // Scroll effect
       window.addEventListener('scroll', function () {
-        if (window.scrollY > 80) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
+        navbar.classList.toggle('scrolled', window.scrollY > 80);
       });
 
-      // Open mobile menu
       function openMenu() {
         mobileMenu.classList.add('open');
         hamburger.classList.add('open');
@@ -1750,7 +1543,6 @@
         document.body.style.overflow = 'hidden';
       }
 
-      // Close mobile menu
       function closeMenu() {
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('open');
@@ -1759,11 +1551,7 @@
       }
 
       hamburger.addEventListener('click', function () {
-        if (mobileMenu.classList.contains('open')) {
-          closeMenu();
-        } else {
-          openMenu();
-        }
+        mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
       });
 
       mobileMenuClose.addEventListener('click', closeMenu);
@@ -1772,16 +1560,16 @@
         link.addEventListener('click', closeMenu);
       });
 
-      // Smooth scroll for all anchor links
+      // Smooth scroll para âncoras internas
       document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
-          const href = this.getAttribute('href');
+          var href = this.getAttribute('href');
           if (href === '#') return;
-          const target = document.querySelector(href);
+          var target = document.querySelector(href);
           if (target) {
             e.preventDefault();
-            const offset = navbar.offsetHeight + 16;
-            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            var offset = navbar.offsetHeight + 16;
+            var top = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top: top, behavior: 'smooth' });
           }
         });
@@ -1789,13 +1577,35 @@
     })();
 
     /* =============================================
-       2. HERO CAROUSEL — fade auto-play every 4s
+       2. RIPPLE EFFECT — todos os botões .btn-buy
     ============================================= */
     (function () {
-      const slides = document.querySelectorAll('.hero-slide');
-      const dots = document.querySelectorAll('.hero-dot');
-      let current = 0;
-      let timer = null;
+      document.querySelectorAll('.btn-buy').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          var rect = btn.getBoundingClientRect();
+          var size = Math.max(rect.width, rect.height) * 1.4;
+          var x = e.clientX - rect.left - size / 2;
+          var y = e.clientY - rect.top - size / 2;
+          var ripple = document.createElement('span');
+          ripple.classList.add('ripple');
+          ripple.style.cssText =
+            'width:' + size + 'px;height:' + size + 'px;' +
+            'left:' + x + 'px;top:' + y + 'px;';
+          btn.appendChild(ripple);
+          setTimeout(function () { ripple.remove(); }, 700);
+        });
+      });
+    })();
+
+    /* =============================================
+       3. HERO CAROUSEL — fade auto-play a cada 4s
+    ============================================= */
+    (function () {
+      var slides = document.querySelectorAll('.hero-slide');
+      var dots   = document.querySelectorAll('.hero-dot');
+      if (!slides.length) return;
+      var current = 0;
+      var timer   = null;
 
       function goTo(index) {
         slides[current].classList.remove('active');
@@ -1808,19 +1618,14 @@
       }
 
       function startTimer() {
-        timer = setInterval(function () {
-          goTo(current + 1);
-        }, 4000);
+        timer = setInterval(function () { goTo(current + 1); }, 4000);
       }
 
-      function resetTimer() {
-        clearInterval(timer);
-        startTimer();
-      }
+      function resetTimer() { clearInterval(timer); startTimer(); }
 
       dots.forEach(function (dot) {
         dot.addEventListener('click', function () {
-          goTo(parseInt(this.dataset.index));
+          goTo(parseInt(this.dataset.index, 10));
           resetTimer();
         });
       });
@@ -1829,17 +1634,21 @@
     })();
 
     /* =============================================
-       3. GALLERY CAROUSEL — slide with arrows + dots + autoplay 5s + pause on hover
+       4. GALLERY CAROUSEL — altura fixa, sem layout shift
+          Auto-play pausado quando fora do viewport
     ============================================= */
     (function () {
-      const slides = document.querySelectorAll('.gallery-slide');
-      const dots = document.querySelectorAll('.gallery-dot');
-      const prevBtn = document.getElementById('galleryPrev');
-      const nextBtn = document.getElementById('galleryNext');
-      const track = document.getElementById('galleryTrack');
-      let current = 0;
-      let timer = null;
-      let paused = false;
+      var slides  = document.querySelectorAll('.gallery-slide');
+      var dots    = document.querySelectorAll('.gallery-dot');
+      var prevBtn = document.getElementById('galleryPrev');
+      var nextBtn = document.getElementById('galleryNext');
+      var track   = document.getElementById('galleryTrack');
+      if (!slides.length) return;
+
+      var current  = 0;
+      var timer    = null;
+      var paused   = false;    // pausa por hover
+      var inView   = false;    // pausa quando fora do viewport
 
       function goTo(index) {
         slides[current].classList.remove('active');
@@ -1851,61 +1660,59 @@
         dots[current].setAttribute('aria-selected', 'true');
       }
 
-      function startTimer() {
-        timer = setInterval(function () {
-          if (!paused) goTo(current + 1);
-        }, 5000);
+      function tick() {
+        if (!paused && inView) goTo(current + 1);
       }
 
-      function resetTimer() {
-        clearInterval(timer);
-        startTimer();
-      }
+      function startTimer()  { timer = setInterval(tick, 5000); }
+      function resetTimer()  { clearInterval(timer); startTimer(); }
 
-      prevBtn.addEventListener('click', function () {
-        goTo(current - 1);
-        resetTimer();
-      });
-
-      nextBtn.addEventListener('click', function () {
-        goTo(current + 1);
-        resetTimer();
-      });
-
-      dots.forEach(function (dot) {
-        dot.addEventListener('click', function () {
-          goTo(parseInt(this.dataset.index));
-          resetTimer();
-        });
-      });
-
-      // Pause on hover
+      // Pausa no hover
       track.addEventListener('mouseenter', function () { paused = true; });
       track.addEventListener('mouseleave', function () { paused = false; });
 
+      // Pausa quando o carrossel sai do viewport — evita rolar a página sozinha
+      if ('IntersectionObserver' in window) {
+        var galleryObserver = new IntersectionObserver(function (entries) {
+          inView = entries[0].isIntersecting;
+        }, { threshold: 0.2 });
+        galleryObserver.observe(track);
+      } else {
+        inView = true; // fallback: toca sempre
+      }
+
+      prevBtn.addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+      nextBtn.addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(this.dataset.index, 10));
+          resetTimer();
+        });
+      });
+
       startTimer();
     })();
 
     /* =============================================
-       4. FAQ ACORDEÃO — one open at a time
+       5. FAQ ACORDEÃO — um de cada vez, animação suave
     ============================================= */
     (function () {
-      const faqItems = document.querySelectorAll('.faq-item');
+      var items = document.querySelectorAll('.faq-item');
 
-      faqItems.forEach(function (item) {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
+      items.forEach(function (item) {
+        var question = item.querySelector('.faq-question');
 
         question.addEventListener('click', function () {
-          const isOpen = item.classList.contains('open');
+          var isOpen = item.classList.contains('open');
 
-          // Close all
-          faqItems.forEach(function (el) {
+          // Fecha todos
+          items.forEach(function (el) {
             el.classList.remove('open');
             el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
           });
 
-          // Open clicked if it was closed
+          // Abre o clicado se estava fechado
           if (!isOpen) {
             item.classList.add('open');
             question.setAttribute('aria-expanded', 'true');
@@ -1915,43 +1722,26 @@
     })();
 
     /* =============================================
-       5. INTERSECTION OBSERVER — fade-in on scroll
+       6. INTERSECTION OBSERVER — fade-in ao rolar
     ============================================= */
     (function () {
-      const targets = document.querySelectorAll('.animate-on-scroll');
+      var targets = document.querySelectorAll('.animate-on-scroll');
 
       if (!('IntersectionObserver' in window)) {
-        targets.forEach(function (el) {
-          el.classList.add('visible');
-        });
+        targets.forEach(function (el) { el.classList.add('visible'); });
         return;
       }
 
-      const observer = new IntersectionObserver(function (entries) {
+      var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.12,
-        rootMargin: '0px 0px -40px 0px'
-      });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-      targets.forEach(function (el) {
-        observer.observe(el);
-      });
-    })();
-
-    /* =============================================
-       6. WHATSAPP FLOAT — appears after 3s with fade-in
-    ============================================= */
-    (function () {
-      const waFloat = document.getElementById('whatsappFloat');
-      setTimeout(function () {
-        waFloat.classList.add('visible');
-      }, 3000);
+      targets.forEach(function (el) { observer.observe(el); });
     })();
 
   </script>
