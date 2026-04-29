@@ -1638,6 +1638,25 @@
       targets.forEach(function (el) { observer.observe(el); });
     })();
 
+/* =============================================
+   TIKTOK — InitiateCheckout ao clicar em comprar
+============================================= */
+(function () {
+  document.querySelectorAll('a[href*="chk.eduzz.com"]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (window.ttq) {
+        ttq.track('InitiateCheckout', {
+          content_name: 'Kit Completo de Papelaria de Casamento',
+          content_id: 'kit-papelaria-casamento',
+          content_type: 'product',
+          value: 45.90,
+          currency: 'BRL'
+        });
+      }
+    });
+  });
+})();
+    
   </script>
 </body>
 </html>
