@@ -19,10 +19,19 @@
       var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
       ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
-      ttq.load('D7P12MRC77U0OLS4GFRG');
-      ttq.page();
-    }(window, document, 'ttq');
-  </script>
+ttq.load('D7P12MRC77U0OLS4GFRG');
+ttq.page();
+
+/* Evento de visualização de conteúdo (ViewContent) */
+ttq.track('ViewContent', {
+  content_name: 'Página de vendas - Kit Papelaria de Casamento',
+  content_id: 'kit-papelaria-casamento',
+  content_type: 'product',
+  value: 45.90,
+  currency: 'BRL'
+});
+}(window, document, 'ttq');
+</script>
   <!-- TikTok Pixel Code End -->
 
   <style>
@@ -1638,6 +1647,28 @@
       targets.forEach(function (el) { observer.observe(el); });
     })();
 
+/* =============================================
+   TIKTOK — InitiateCheckout ao clicar em comprar
+============================================= */
+(function () {
+  // Seleciona todos os links que levam para o checkout da Eduzz
+  var checkoutButtons = document.querySelectorAll('a[href*="chk.eduzz.com"]');
+
+  checkoutButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (window.ttq) {
+        ttq.track('InitiateCheckout', {
+          content_name: 'Kit Completo de Papelaria de Casamento',
+          content_id: 'kit-papelaria-casamento',
+          content_type: 'product',
+          value: 45.90,
+          currency: 'BRL'
+        });
+      }
+    });
+  });
+})();
+    
 /* =============================================
    TIKTOK — InitiateCheckout ao clicar em comprar
 ============================================= */
