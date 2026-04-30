@@ -1,860 +1,753 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Centro de Mesa Triangular | Template Canva</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --gold: #C9A84C;
-      --gold-light: #E8D5A3;
-      --cream: #FAF7F2;
-      --dark: #2C2416;
-      --mid: #6B5B3E;
-      --white: #FFFFFF;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--cream);
-      color: var(--dark);
-      overflow-x: hidden;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(145deg, #2C2416 0%, #4A3728 50%, #6B5B3E 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.15) 0%, transparent 70%);
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(201,168,76,0.2);
-      border: 1px solid rgba(201,168,76,0.5);
-      color: var(--gold-light);
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 6px 18px;
-      border-radius: 50px;
-      margin-bottom: 28px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.2s forwards;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 6vw, 4rem);
-      color: var(--white);
-      line-height: 1.2;
-      max-width: 760px;
-      margin: 0 auto 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.4s forwards;
-    }
-
-    .hero h1 span { color: var(--gold); }
-
-    .hero p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: rgba(255,255,255,0.75);
-      max-width: 540px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-      font-weight: 300;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.6s forwards;
-    }
-
-    .hero-cta-wrap {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.8s 0.8s forwards;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold), #A8861F);
-      color: var(--dark);
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.5px;
-      padding: 18px 48px;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: transform 0.25s, box-shadow 0.25s;
-      box-shadow: 0 8px 30px rgba(201,168,76,0.35);
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 40px rgba(201,168,76,0.5);
-    }
-
-    .btn-primary:active { transform: translateY(0); }
-
-    .hero-sub {
-      display: block;
-      margin-top: 14px;
-      color: rgba(255,255,255,0.45);
-      font-size: 0.8rem;
-    }
-
-    /* ── SCROLL INDICATOR ── */
-    .scroll-down {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      opacity: 0;
-      animation: fadeUp 1s 1.4s forwards;
-    }
-
-    .scroll-down span {
-      width: 1px;
-      height: 40px;
-      background: linear-gradient(to bottom, transparent, var(--gold));
-      animation: scrollLine 1.5s infinite;
-    }
-
-    /* ── PROBLEM ── */
-    .problem {
-      background: var(--white);
-      padding: 80px 24px;
-      text-align: center;
-    }
-
-    .section-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .problem h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--dark);
-      max-width: 620px;
-      margin: 0 auto 20px;
-      line-height: 1.3;
-    }
-
-    .problem p {
-      color: var(--mid);
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin: 0 auto;
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    /* ── PRODUCT ── */
-    .product {
-      padding: 80px 24px;
-      background: var(--cream);
-      text-align: center;
-    }
-
-    .product-mockup {
-      width: 100%;
-      max-width: 480px;
-      margin: 40px auto;
-      background: linear-gradient(135deg, #2C2416, #4A3728);
-      border-radius: 8px;
-      aspect-ratio: 4/3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .triangle-preview {
-      width: 0;
-      height: 0;
-      border-left: 80px solid transparent;
-      border-right: 80px solid transparent;
-      border-bottom: 140px solid rgba(201,168,76,0.8);
-      filter: drop-shadow(0 0 20px rgba(201,168,76,0.4));
-    }
-
-    .product-mockup::after {
-      content: 'Template Canva';
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      font-size: 0.7rem;
-      color: rgba(201,168,76,0.6);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    /* ── BENEFITS ── */
-    .benefits {
-      padding: 80px 24px;
-      background: var(--white);
-    }
-
-    .benefits-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .benefits-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--dark);
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 32px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .benefit-card {
-      background: var(--cream);
-      border-radius: 8px;
-      padding: 32px 28px;
-      text-align: center;
-      border: 1px solid rgba(201,168,76,0.15);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .benefit-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(201,168,76,0.12);
-    }
-
-    .benefit-icon {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .benefit-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--dark);
-      margin-bottom: 10px;
-    }
-
-    .benefit-card p {
-      font-size: 0.9rem;
-      color: var(--mid);
-      line-height: 1.7;
-      font-weight: 300;
-    }
-
-    /* ── TESTIMONIALS ── */
-    .testimonials {
-      padding: 80px 24px;
-      background: linear-gradient(145deg, #2C2416, #4A3728);
-      text-align: center;
-    }
-
-    .testimonials h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      color: var(--white);
-      margin-bottom: 48px;
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .testimonial {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 8px;
-      padding: 28px 24px;
-      text-align: left;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s, transform 0.6s;
-    }
-
-    .testimonial.visible { opacity: 1; transform: translateY(0); }
-
-    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 14px; }
-
-    .testimonial p {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
-
-    .testimonial-author {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--gold-light);
-      letter-spacing: 1px;
-    }
-
-    /* ── PRICE ── */
-    .price-section {
-      padding: 100px 24px;
-      background: var(--cream);
-      text-align: center;
-    }
-
-    .price-box {
-      max-width: 480px;
-      margin: 0 auto;
-      background: var(--white);
-      border-radius: 12px;
-      padding: 52px 40px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-      border: 1px solid rgba(201,168,76,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .price-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), #E8D5A3);
-    }
-
-    .price-label {
-      font-size: 0.7rem;
-      letter-spacing: 3px;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .price-box h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      color: var(--dark);
-      margin-bottom: 28px;
-    }
-
-    .price-value {
-      margin-bottom: 32px;
-    }
-
-    .price-value .from {
-      font-size: 0.85rem;
-      color: var(--mid);
-      text-decoration: line-through;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .price-value .current {
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1;
-    }
-
-    .price-value .current sup {
-      font-size: 1.4rem;
-      vertical-align: top;
-      margin-top: 8px;
-    }
-
-    .price-value .note {
-      font-size: 0.8rem;
-      color: var(--mid);
-      margin-top: 6px;
-      display: block;
-    }
-
-    .price-includes {
-      list-style: none;
-      margin-bottom: 36px;
-      text-align: left;
-    }
-
-    .price-includes li {
-      font-size: 0.92rem;
-      color: var(--mid);
-      padding: 9px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .price-includes li::before {
-      content: '✓';
-      color: var(--gold);
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-
-    .guarantee {
-      margin-top: 24px;
-      font-size: 0.8rem;
-      color: var(--mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    /* ── FAQ ── */
-    .faq {
-      padding: 80px 24px;
-      background: var(--white);
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .faq h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.5rem, 4vw, 2rem);
-      color: var(--dark);
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      text-align: left;
-      padding: 22px 0;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--dark);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .faq-question span.icon {
-      color: var(--gold);
-      font-size: 1.2rem;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-
-    .faq-question.open span.icon { transform: rotate(45deg); }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s;
-    }
-
-    .faq-answer.open { max-height: 300px; padding-bottom: 20px; }
-
-    .faq-answer p {
-      font-size: 0.9rem;
-      color: var(--mid);
-      line-height: 1.8;
-      font-weight: 300;
-    }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 100px 24px;
-      background: linear-gradient(145deg, #2C2416, #4A3728);
-      text-align: center;
-    }
-
-    .final-cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      color: var(--white);
-      margin-bottom: 16px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .final-cta h2 span { color: var(--gold); }
-
-    .final-cta p {
-      color: rgba(255,255,255,0.6);
-      font-weight: 300;
-      margin-bottom: 40px;
-      font-size: 1rem;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #1A1208;
-      padding: 28px 24px;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.3);
-    }
-
-    footer a { color: rgba(201,168,76,0.6); text-decoration: none; }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes scrollLine {
-      0% { transform: scaleY(0); transform-origin: top; }
-      50% { transform: scaleY(1); transform-origin: top; }
-      51% { transform: scaleY(1); transform-origin: bottom; }
-      100% { transform: scaleY(0); transform-origin: bottom; }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── STICKY BAR ── */
-    .sticky-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: rgba(44, 36, 22, 0.97);
-      backdrop-filter: blur(10px);
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      z-index: 999;
-      border-top: 1px solid rgba(201,168,76,0.2);
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
-
-    .sticky-bar.visible { transform: translateY(0); }
-
-    .sticky-bar p {
-      color: var(--white);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .sticky-bar p span { color: var(--gold); font-weight: 700; }
-
-    .btn-small {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--gold), #A8861F);
-      color: var(--dark);
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 12px 28px;
-      border-radius: 4px;
-      text-decoration: none;
-      white-space: nowrap;
-      transition: transform 0.2s;
-    }
-
-    .btn-small:hover { transform: translateY(-2px); }
-
-    @media (max-width: 480px) {
-      .sticky-bar p { display: none; }
-      .btn-small { width: 100%; text-align: center; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Centro de Mesa Bíblico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #22c55e;
+            --green-dark: #16a34a;
+            --green-light: #dcfce7;
+            --text: #1a1a1a;
+            --text-muted: #6b7280;
+            --bg: #ffffff;
+            --gray-bg: #f3f4f6;
+            --border: #e5e7eb;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            max-width: 420px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+
+        /* ===== ENTRANCE ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideLeft {
+            from { opacity: 0; transform: translateX(-24px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideRight {
+            from { opacity: 0; transform: translateX(24px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35); }
+            50%       { box-shadow: 0 4px 32px rgba(34, 197, 94, 0.65); }
+        }
+
+        @keyframes shimmer {
+            0%   { background-position: -400px 0; }
+            100% { background-position: 400px 0; }
+        }
+
+        @keyframes starPop {
+            0%   { transform: scale(0); opacity: 0; }
+            60%  { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes badgeBounce {
+            0%, 100% { transform: translateY(0); }
+            40%       { transform: translateY(-6px); }
+            70%       { transform: translateY(-3px); }
+        }
+
+        @keyframes checkSlide {
+            from { opacity: 0; transform: translateX(-16px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes priceCount {
+            from { opacity: 0; transform: scale(0.7) translateY(10px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Scroll-triggered animation class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-24px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(24px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            padding: 24px 20px;
+        }
+
+        /* ===== HEADLINE ===== */
+        .headline {
+            text-align: center;
+            margin-bottom: 32px;
+            padding-top: 24px;
+        }
+
+        .headline-small {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: fadeIn 0.6s ease both;
+            animation-delay: 0.1s;
+        }
+
+        .headline-main {
+            font-size: 38px;
+            font-weight: 800;
+            color: var(--text);
+            line-height: 1.15;
+            animation: fadeUp 0.7s ease both;
+            animation-delay: 0.25s;
+        }
+
+        .headline-divider {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green), var(--green-dark));
+            border-radius: 99px;
+            margin: 12px auto 0;
+            animation: scaleIn 0.5s ease both;
+            animation-delay: 0.5s;
+        }
+
+        /* ===== BENEFITS ===== */
+        .benefits {
+            background: var(--green-light);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 28px;
+            border: 1px solid #bbf7d0;
+            animation: fadeUp 0.6s ease both;
+            animation-delay: 0.4s;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 13px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .benefit-item:last-child { margin-bottom: 0; }
+
+        .benefit-item:nth-child(1) { animation: checkSlide 0.4s ease both; animation-delay: 0.55s; }
+        .benefit-item:nth-child(2) { animation: checkSlide 0.4s ease both; animation-delay: 0.65s; }
+        .benefit-item:nth-child(3) { animation: checkSlide 0.4s ease both; animation-delay: 0.75s; }
+        .benefit-item:nth-child(4) { animation: checkSlide 0.4s ease both; animation-delay: 0.85s; }
+
+        .check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--green);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 12px;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ===== PRICE ===== */
+        .price-section {
+            text-align: center;
+            margin-bottom: 22px;
+            animation: fadeUp 0.6s ease both;
+            animation-delay: 0.7s;
+        }
+
+        .price-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .price {
+            font-size: 52px;
+            font-weight: 900;
+            color: var(--green);
+            line-height: 1;
+            animation: priceCount 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+            animation-delay: 0.85s;
+        }
+
+        /* ===== CTA BUTTON ===== */
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            background: linear-gradient(135deg, var(--green), var(--green-dark));
+            color: #fff;
+            text-decoration: none;
+            padding: 19px;
+            border-radius: 14px;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-align: center;
+            margin-bottom: 32px;
+            animation: pulse 2.5s ease-in-out infinite, fadeUp 0.5s ease both;
+            animation-delay: 0s, 0.9s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.18), transparent);
+            animation: shimmer 2.8s infinite;
+        }
+
+        .cta-button:active {
+            transform: scale(0.97);
+            transition: transform 0.1s;
+        }
+
+        .cta-arrow {
+            font-size: 20px;
+            transition: transform 0.2s;
+        }
+
+        .cta-button:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ===== PRODUCT IMAGE ===== */
+        .product-image-wrapper {
+            position: relative;
+            margin-bottom: 32px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            animation: scaleIn 0.7s ease both;
+            animation-delay: 0.5s;
+            cursor: zoom-in;
+        }
+
+        .product-image {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .product-image-wrapper:hover .product-image {
+            transform: scale(1.03);
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials-section {
+            background: var(--gray-bg);
+            padding: 36px 20px 32px;
+            margin: 0 -20px 32px -20px;
+        }
+
+        .section-title {
+            font-size: 26px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+
+        .stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 10px;
+        }
+
+        .stars span {
+            font-size: 18px;
+            color: #fbbf24;
+            display: inline-block;
+        }
+
+        .stars span:nth-child(1) { animation: starPop 0.3s ease both; animation-delay: 0.1s; }
+        .stars span:nth-child(2) { animation: starPop 0.3s ease both; animation-delay: 0.2s; }
+        .stars span:nth-child(3) { animation: starPop 0.3s ease both; animation-delay: 0.3s; }
+        .stars span:nth-child(4) { animation: starPop 0.3s ease both; animation-delay: 0.4s; }
+        .stars span:nth-child(5) { animation: starPop 0.3s ease both; animation-delay: 0.5s; }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #444;
+            line-height: 1.55;
+        }
+
+        .guarantee-text {
+            text-align: center;
+            font-size: 15px;
+            color: #555;
+            margin: 20px 0 10px;
+            line-height: 1.65;
+        }
+
+        .guarantee-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 24px 0 8px;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--green), var(--green-dark));
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 700;
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.35);
+            animation: badgeBounce 2.6s ease-in-out infinite;
+        }
+
+        .badge-icon {
+            font-size: 20px;
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features-list {
+            background: var(--gray-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 4px 0 26px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 13px;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .feature-item:last-child { margin-bottom: 0; }
+
+        .bullet {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            margin-right: 12px;
+            margin-top: 7px;
+            flex-shrink: 0;
+        }
+
+        .security-text {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 14px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            margin-top: 36px;
+            padding-bottom: 36px;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .faq-item.open {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+
+        .faq-question {
+            background: #fff;
+            padding: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .faq-toggle {
+            width: 26px;
+            height: 26px;
+            background: var(--green-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--green-dark);
+            flex-shrink: 0;
+            transition: transform 0.3s ease, background 0.25s ease;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(180deg);
+            background: var(--green);
+            color: #fff;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.3s ease;
+            background: #fafafa;
+        }
+
+        .faq-answer-inner {
+            padding: 14px 16px;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.65;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+        }
+
+        /* ===== RIPPLE EFFECT ===== */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(0);
+            animation: rippleAnim 0.55s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnim {
+            to { transform: scale(4); opacity: 0; }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 4px; }
+    </style>
 </head>
 <body>
+    <div class="container">
 
-  <!-- ── HERO ── -->
-  <section class="hero">
-    <div>
-      <div class="hero-badge">✦ Template Canva Editável</div>
-      <h1>O centro de mesa que vai <span>transformar</span> sua festa</h1>
-      <p>Template triangular para Canva — elegante, fácil de editar e pronto para impressão em minutos.</p>
-      <div class="hero-cta-wrap">
-        <a href="https://chk.eduzz.com/G96RKR6AW1" class="btn-primary" target="_blank">
-          Quero meu template agora
+        <!-- HEADLINE -->
+        <div class="headline">
+            <div class="headline-small">Template</div>
+            <h1 class="headline-main">Centro de<br>Mesa Bíblico</h1>
+            <div class="headline-divider"></div>
+        </div>
+
+        <!-- BENEFITS -->
+        <div class="benefits">
+            <div class="benefit-item">
+                <span class="check">✔</span>
+                <span>Edite para o seu casamento</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✔</span>
+                <span>Formato A4 para impressão</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✔</span>
+                <span>Compra segura</span>
+            </div>
+            <div class="benefit-item">
+                <span class="check">✔</span>
+                <span>Acesso imediato</span>
+            </div>
+        </div>
+
+        <!-- PRICE -->
+        <div class="price-section">
+            <div class="price-label">POR APENAS</div>
+            <div class="price">R$9,90</div>
+        </div>
+
+        <!-- CTA BUTTON 1 -->
+        <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-button ripple" id="btn1">
+            EU QUERO
+            <span class="cta-arrow">→</span>
         </a>
-        <span class="hero-sub">🔒 Compra segura · Acesso imediato</span>
-      </div>
-    </div>
-    <div class="scroll-down"><span></span></div>
-  </section>
 
-  <!-- ── PROBLEM ── -->
-  <section class="problem">
-    <div class="reveal">
-      <p class="section-label">O problema</p>
-      <h2>Gastar fortunas com decoração não faz mais sentido</h2>
-      <p>Contratar designers ou comprar kits prontos é caro e demorado. Com este template, você cria uma decoração de arrasar sem sair de casa — no seu ritmo, com suas cores.</p>
-    </div>
-  </section>
+        <!-- PRODUCT IMAGE -->
+        <div class="product-image-wrapper reveal">
+            <img
+                src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-15.18.39-3.jpg?w=683&allow_lossy=1"
+                alt="Centro de Mesa Bíblico"
+                class="product-image"
+            >
+        </div>
 
-  <!-- ── PRODUCT ── -->
-  <section class="product reveal">
-    <p class="section-label">O produto</p>
-    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2.4rem); max-width:520px; margin:0 auto;">
-      Centro de Mesa Triangular
-    </h2>
-    <div class="product-mockup">
-      <div class="triangle-preview"></div>
-    </div>
-    <p style="color:var(--mid); max-width:480px; margin:0 auto; line-height:1.8; font-weight:300;">
-      Design sofisticado em formato triangular, totalmente personalizável no Canva. Ideal para festas de aniversário, casamentos, chás de bebê e eventos especiais.
-    </p>
-  </section>
-
-  <!-- ── BENEFITS ── -->
-  <section class="benefits">
-    <div class="benefits-header reveal">
-      <p class="section-label">Por que escolher</p>
-      <h2 style="font-family:'Playfair Display',serif; max-width:480px; margin:0 auto;">Tudo que você precisa em um só arquivo</h2>
-    </div>
-    <div class="benefits-grid">
-      <div class="benefit-card reveal">
-        <div class="benefit-icon">✏️</div>
-        <h3>100% Editável</h3>
-        <p>Personalize textos, cores e fontes diretamente no Canva, sem precisar de nenhum conhecimento técnico.</p>
-      </div>
-      <div class="benefit-card reveal">
-        <div class="benefit-icon">⚡</div>
-        <h3>Acesso Imediato</h3>
-        <p>Após a compra, você recebe o link do template na hora. Sem espera, sem complicação.</p>
-      </div>
-      <div class="benefit-card reveal">
-        <div class="benefit-icon">🖨️</div>
-        <h3>Pronto para Imprimir</h3>
-        <p>Arquivo em alta resolução, preparado para impressão caseira ou em gráfica com acabamento profissional.</p>
-      </div>
-      <div class="benefit-card reveal">
-        <div class="benefit-icon">💰</div>
-        <h3>Economia Real</h3>
-        <p>Reutilize o template em quantas festas quiser. Um único investimento para múltiplos eventos.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ── -->
-  <section class="testimonials">
-    <h2 class="reveal" style="color:var(--white);">O que estão dizendo</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"Usei para o aniversário da minha filha e ficou lindo demais! Editei em menos de 10 minutos."</p>
-        <div class="testimonial-author">— Ana Paula M.</div>
-      </div>
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"Produto incrível, super fácil de personalizar. A mesa ficou elegante e eu economizei bastante."</p>
-        <div class="testimonial-author">— Fernanda S.</div>
-      </div>
-      <div class="testimonial">
-        <div class="stars">★★★★★</div>
-        <p>"Comprei com receio, mas superou todas as expectativas. Vale muito cada centavo!"</p>
-        <div class="testimonial-author">— Juliana C.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── PRICE ── -->
-  <section class="price-section">
-    <div class="price-box reveal">
-      <p class="price-label">Oferta especial</p>
-      <h2>Centro de Mesa Triangular</h2>
-      <div class="price-value">
-        <span class="from">De R$ 29,90</span>
-        <div class="current"><sup>R$</sup>14<sup style="font-size:1rem;margin-top:14px">,90</sup></div>
-        <span class="note">pagamento único · acesso vitalício</span>
-      </div>
-      <ul class="price-includes">
-        <li>Template Canva editável</li>
-        <li>Alta resolução para impressão</li>
-        <li>Instrução de uso incluída</li>
-        <li>Acesso imediato após compra</li>
-        <li>Uso ilimitado em seus eventos</li>
-      </ul>
-      <a href="https://chk.eduzz.com/G96RKR6AW1" class="btn-primary" target="_blank" style="display:block; text-align:center;">
-        Comprar agora
-      </a>
-      <p class="guarantee">🔒 Pagamento 100% seguro via Eduzz</p>
-    </div>
-  </section>
-
-  <!-- ── FAQ ── -->
-  <section class="faq">
-    <h2 class="reveal">Dúvidas frequentes</h2>
-
-    <div class="faq-item">
-      <button class="faq-question">
-        Preciso ter o Canva pago?
-        <span class="icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Não! O template funciona na versão gratuita do Canva. Você pode editar e baixar sem precisar de assinatura paga.</p>
-      </div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        Como vou receber o template?
-        <span class="icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Após a confirmação do pagamento, você recebe por e-mail o link de acesso ao template no Canva. O acesso é imediato!</p>
-      </div>
+    <!-- TESTIMONIALS -->
+    <div class="testimonials-section">
+        <h2 class="section-title reveal">O que estão falando</h2>
+
+        <div class="testimonial-card reveal-left" style="transition-delay: 0.1s">
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-text">Que perfeição! Amei o centro de mesa com os versículos</p>
+        </div>
+
+        <div class="testimonial-card reveal-right" style="transition-delay: 0.2s">
+            <div class="stars">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <p class="testimonial-text">Eu ameeeei a ideia do centro de mesa com os versículos!!</p>
+        </div>
+
+        <p class="guarantee-text reveal">Faça como várias outras noivas e garanta o seu template.</p>
+        <p class="guarantee-text reveal" style="transition-delay: 0.1s">Além disso, você tem 100% de garantia comprando este produto.</p>
+
+        <div class="guarantee-badge reveal" style="transition-delay: 0.15s">
+            <div class="badge">
+                <span class="badge-icon">🛡️</span>
+                7 dias de garantia
+            </div>
+        </div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        Posso usar em mais de uma festa?
-        <span class="icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Sim! O acesso é vitalício e você pode editar o template quantas vezes quiser, para qualquer evento.</p>
-      </div>
+    <!-- FEATURES SECTION -->
+    <div class="container">
+        <h2 class="section-title reveal">Garanta já o seu!</h2>
+
+        <div class="features-list reveal" style="transition-delay: 0.1s">
+            <div class="feature-item">
+                <span class="bullet"></span>
+                <span>Template Canva editável</span>
+            </div>
+            <div class="feature-item">
+                <span class="bullet"></span>
+                <span>Alta resolução para impressão</span>
+            </div>
+            <div class="feature-item">
+                <span class="bullet"></span>
+                <span>Instrução de uso incluída</span>
+            </div>
+            <div class="feature-item">
+                <span class="bullet"></span>
+                <span>Acesso imediato após compra</span>
+            </div>
+        </div>
+
+        <div class="price-section reveal" style="transition-delay: 0.15s">
+            <div class="price-label">POR APENAS</div>
+            <div class="price">R$9,90</div>
+        </div>
+
+        <!-- CTA BUTTON 2 -->
+        <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-button ripple reveal" id="btn2" style="transition-delay: 0.2s">
+            EU QUERO
+            <span class="cta-arrow">→</span>
+        </a>
+
+        <p class="security-text reveal" style="transition-delay: 0.25s">
+            🔒 Pagamento 100% seguro via Eduzz<br>
+            ACESSO VITALÍCIO | PAGAMENTO ÚNICO
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2 class="section-title reveal">Perguntas Frequentes</h2>
+
+            <div class="faq-item reveal" style="transition-delay: 0.05s">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Preciso ter o Canva pago?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Não. O template pode ser editado no Canva gratuito.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal" style="transition-delay: 0.1s">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Como vou receber o template?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Após a compra, você recebe um link de acesso imediato para editar.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal" style="transition-delay: 0.15s">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Tenho garantia?</span>
+                    <div class="faq-toggle">▼</div>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner">Sim, você tem 7 dias de garantia.</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question">
-        Onde imprimo o arquivo?
-        <span class="icon">+</span>
-      </button>
-      <div class="faq-answer">
-        <p>Você pode imprimir em casa com papel comum ou cartão, ou levar o arquivo a qualquer gráfica ou papelaria. O arquivo é em alta resolução para garantir qualidade.</p>
-      </div>
-    </div>
-  </section>
+    <script>
+        /* ===== FAQ TOGGLE ===== */
+        function toggleFAQ(questionEl) {
+            const item = questionEl.parentElement;
+            const isOpen = item.classList.contains('open');
 
-  <!-- ── FINAL CTA ── -->
-  <section class="final-cta">
-    <h2 class="reveal">Sua festa merece um toque <span>especial</span></h2>
-    <p class="reveal">Acesso imediato · Sem mensalidade · 100% editável</p>
-    <div class="reveal">
-      <a href="https://chk.eduzz.com/G96RKR6AW1" class="btn-primary" target="_blank">
-        Quero meu template agora
-      </a>
-    </div>
-  </section>
+            document.querySelectorAll('.faq-item.open').forEach(el => {
+                if (el !== item) el.classList.remove('open');
+            });
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <p>© 2026 · Todos os direitos reservados ·
-      <a href="https://chk.eduzz.com/G96RKR6AW1" target="_blank">Comprar</a>
-    </p>
-  </footer>
-
-  <!-- ── STICKY BAR ── -->
-  <div class="sticky-bar" id="stickyBar">
-    <p>🎉 Oferta especial: <span>R$ 14,90</span> · Acesso imediato</p>
-    <a href="https://chk.eduzz.com/G96RKR6AW1" class="btn-small" target="_blank">Comprar agora</a>
-  </div>
-
-  <script>
-    // ── Reveal on scroll ──
-    const reveals = document.querySelectorAll('.reveal');
-    const testimonials = document.querySelectorAll('.testimonial');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, 100);
-          observer.unobserve(entry.target);
+            item.classList.toggle('open', !isOpen);
         }
-      });
-    }, { threshold: 0.12 });
 
-    reveals.forEach(el => observer.observe(el));
-    testimonials.forEach(el => observer.observe(el));
+        /* ===== SCROLL REVEAL ===== */
+        const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-    // ── Sticky bar ──
-    const stickyBar = document.getElementById('stickyBar');
-    let heroHeight = document.querySelector('.hero').offsetHeight;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > heroHeight * 0.6) {
-        stickyBar.classList.add('visible');
-      } else {
-        stickyBar.classList.remove('visible');
-      }
-    });
+        revealEls.forEach(el => observer.observe(el));
 
-    // ── FAQ accordion ──
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const answer = btn.nextElementSibling;
-        const isOpen = btn.classList.contains('open');
+        /* ===== RIPPLE EFFECT ===== */
+        document.querySelectorAll('.ripple').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const size = Math.max(rect.width, rect.height) * 1.6;
 
-        // fecha todos
-        document.querySelectorAll('.faq-question').forEach(b => {
-          b.classList.remove('open');
-          b.nextElementSibling.classList.remove('open');
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple-effect';
+                ripple.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x - size / 2}px;
+                    top: ${y - size / 2}px;
+                `;
+
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
         });
 
-        // abre o clicado (se não estava aberto)
-        if (!isOpen) {
-          btn.classList.add('open');
-          answer.classList.add('open');
-        }
-      });
-    });
+        /* ===== STAR ANIMATION ON SCROLL ===== */
+        const starObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stars = entry.target.querySelectorAll('.stars span');
+                    stars.forEach((star, i) => {
+                        star.style.animation = 'none';
+                        star.offsetHeight;
+                        star.style.animation = `starPop 0.3s ease both ${0.1 + i * 0.1}s`;
+                    });
+                    starObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
 
-    // ── Smooth scroll para âncoras ──
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(a.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
-
+        document.querySelectorAll('.testimonial-card').forEach(card => starObserver.observe(card));
+    </script>
 </body>
 </html>
