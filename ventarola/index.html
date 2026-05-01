@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ventarola para Casamento — Template para Impressão | Diário de Noiva da Sam</title>
+<meta name="description" content="Template digital de ventarola para casamento em alta resolução. Pronto para imprimir. Editável no Canva. Acesso imediato por R$7,90.">
+<meta property="og:title" content="Ventarola para Casamento — Template para Impressão">
+<meta property="og:description" content="Template digital de ventarola com design elegante para casamentos. Pronto para impressão. R$7,90.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KCQXF5V3');</script>
+
+<!-- TikTok Pixel -->
+<script>
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+ttq.load('D7P5LFRC77U7AO3K2N8G');
+ttq.load('D7P5JQ3C77U3CRQJR630');
+ttq.page()}(window,document,'ttq');
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --gold:#b8860b;
+  --gold-l:#d4a017;
+  --gold-b:#e8d5a3;
+  --gold-p:#fef9ed;
+  --g:#2d5f3f;
+  --gm:#3a7a54;
+  --gl:#52b788;
+  --green-l:#d4edda;
+  --cream:#faf8f4;
+  --white:#fff;
+  --txt:#1a1a1a;
+  --txts:#4a4a4a;
+  --txtm:#888;
+  --bdr:#e8e4dd;
+  --red:#c0392b;
+  --shadow:0 4px 24px rgba(0,0,0,.09);
+  --shadow-lg:0 12px 48px rgba(0,0,0,.14);
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:'Lato',system-ui,sans-serif;
+  background:var(--cream);
+  color:var(--txt);
+  max-width:480px;
+  margin:0 auto;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.65;
+}
+
+/* ANIMAÇÕES */
+@keyframes urgencyPulse{0%,100%{background:var(--red)}50%{background:#a93226}}
+@keyframes glow{0%,100%{box-shadow:0 6px 24px rgba(45,95,63,.4)}50%{box-shadow:0 10px 40px rgba(45,95,63,.65)}}
+@keyframes shimmer{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+@keyframes dotPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes rippleAnim{to{transform:scale(4);opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* URGENCY BAR */
+.urgency-bar{
+  position:sticky;top:0;z-index:200;
+  background:var(--red);
+  animation:urgencyPulse 3s ease-in-out infinite;
+  color:#fff;text-align:center;
+  padding:11px 16px;
+  font-size:12.5px;font-weight:700;
+  letter-spacing:.4px;line-height:1.4;
+}
+
+/* SOCIAL PROOF */
+.social-proof{
+  background:var(--g);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:9px 20px;font-size:12px;font-weight:600;
+}
+.sp-dot{
+  width:8px;height:8px;background:#74c69d;
+  border-radius:50%;flex-shrink:0;
+  animation:dotPulse 2s ease-in-out infinite;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(170deg,#fff 0%,var(--gold-p) 100%);
+  padding:32px 22px 28px;
+  border-bottom:1px solid var(--bdr);
+  position:relative;
+}
+.hero::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#c49a6c,var(--gm),#c49a6c);
+}
+.tag-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--gold-p);border:1px solid var(--gold-b);
+  color:var(--gold);font-size:10.5px;font-weight:700;
+  letter-spacing:1.6px;text-transform:uppercase;
+  padding:6px 14px;border-radius:99px;margin-bottom:18px;
+  animation:fadeUp .5s ease both .1s;
+}
+.hero-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:30px;font-weight:700;line-height:1.2;
+  color:var(--txt);margin-bottom:14px;
+  animation:fadeUp .6s ease both .2s;
+}
+.hero-title em{font-style:italic;color:var(--g)}
+.hero-sub{
+  font-size:15px;color:var(--txts);
+  margin-bottom:22px;line-height:1.7;
+  animation:fadeUp .6s ease both .3s;
+}
+
+/* IMAGEM PRODUTO */
+.product-img-wrap{
+  position:relative;
+  margin:0 0 28px;
+  border-radius:18px;overflow:hidden;
+  box-shadow:var(--shadow-lg);
+  border:1.5px solid var(--gold-b);
+  animation:fadeUp .7s ease both .25s;
+  background:var(--cream);
+}
+.product-img-wrap img{
+  width:100%;display:block;
+  aspect-ratio:4/3;object-fit:cover;
+}
+.img-badge{
+  position:absolute;top:14px;left:14px;
+  background:var(--g);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;
+  padding:5px 12px;border-radius:99px;
+  box-shadow:0 2px 10px rgba(0,0,0,.25);
+}
+.img-price-tag{
+  position:absolute;bottom:14px;right:14px;
+  background:#fff;
+  border:1.5px solid var(--gold-b);
+  border-radius:12px;padding:8px 14px;
+  text-align:center;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  animation:float 4s ease-in-out infinite;
+}
+.ipt-from{font-size:10px;color:var(--txtm);text-decoration:line-through;font-weight:500}
+.ipt-price{font-size:20px;font-weight:800;color:var(--g);line-height:1.1}
+.ipt-label{font-size:9.5px;color:var(--txtm);font-weight:600;letter-spacing:.5px}
+
+/* CHECKS HERO */
+.hero-checks{list-style:none;margin-bottom:26px;display:flex;flex-direction:column;gap:10px}
+.hero-checks li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:var(--txts);
+}
+.hc-icon{
+  flex-shrink:0;width:20px;height:20px;
+  background:var(--green-l);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+
+/* BOTÃO CTA */
+.cta-btn{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--gm),var(--g));
+  color:#fff;font-family:'Lato',sans-serif;
+  font-size:15px;font-weight:800;
+  letter-spacing:.6px;text-transform:uppercase;
+  text-align:center;text-decoration:none;
+  padding:18px 24px;border-radius:12px;
+  border:none;cursor:pointer;
+  position:relative;overflow:hidden;
+  box-shadow:0 6px 24px rgba(45,95,63,.4);
+  animation:glow 3s ease-in-out infinite;
+  -webkit-tap-highlight-color:transparent;
+}
+.cta-btn .shine{
+  position:absolute;top:0;left:0;width:50%;height:100%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.22) 50%,transparent 60%);
+  animation:shimmer 3.5s ease-in-out infinite;
+}
+.cta-sm{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--gm),var(--g));
+  color:#fff;font-family:'Lato',sans-serif;
+  font-size:14px;font-weight:800;
+  text-align:center;text-decoration:none;
+  padding:16px 20px;border-radius:12px;
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 18px rgba(45,95,63,.35);
+  -webkit-tap-highlight-color:transparent;
+}
+.cta-sm .shine{
+  position:absolute;top:0;left:0;width:50%;height:100%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.2) 50%,transparent 60%);
+  animation:shimmer 3.5s ease-in-out infinite;
+}
+.trust-note{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  font-size:11.5px;color:var(--txtm);margin-top:10px;
+  flex-wrap:wrap;text-align:center;
+}
+.ripple-el{
+  position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.35);
+  transform:scale(0);
+  animation:rippleAnim .65s linear;
+  pointer-events:none;
+}
+
+/* DIVISOR */
+.divider{
+  display:flex;align-items:center;gap:14px;
+  padding:0 22px;margin:6px 0;
+}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--bdr)}
+.divider span{
+  font-size:11px;color:var(--txtm);font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;white-space:nowrap;
+}
+
+/* SEÇÕES */
+.section{padding:36px 22px;background:var(--cream)}
+.section-alt{padding:36px 22px;background:var(--white)}
+
+.sec-tag{
+  display:inline-block;
+  background:var(--gold-p);border:1px solid var(--gold-b);
+  color:var(--gold);font-size:10px;font-weight:700;
+  letter-spacing:1.4px;text-transform:uppercase;
+  padding:5px 12px;border-radius:99px;margin-bottom:12px;
+}
+.sec-title{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:24px;font-weight:700;line-height:1.25;
+  color:var(--txt);margin-bottom:10px;
+}
+.sec-title em{font-style:italic;color:var(--g)}
+.sec-sub{font-size:14px;color:var(--txts);line-height:1.7;margin-bottom:24px}
+
+/* INCLUDES */
+.includes-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:28px}
+.inc-item{
+  background:var(--white);border:1px solid var(--bdr);
+  border-radius:12px;padding:16px;
+  display:flex;align-items:flex-start;gap:14px;
+  box-shadow:var(--shadow);
+}
+.inc-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold-p),#fff5d6);
+  border:1px solid var(--gold-b);border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+}
+.inc-body h4{font-size:14px;font-weight:700;color:var(--txt);margin-bottom:3px}
+.inc-body p{font-size:12.5px;color:var(--txts);line-height:1.55}
+
+/* COMO FUNCIONA */
+.steps{display:flex;flex-direction:column;gap:20px;margin-bottom:28px}
+.step{display:flex;gap:16px;align-items:flex-start}
+.step-num{
+  flex-shrink:0;width:40px;height:40px;
+  background:linear-gradient(135deg,var(--gm),var(--g));
+  color:#fff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;font-size:18px;font-weight:700;
+}
+.step-body h4{font-size:14px;font-weight:700;color:var(--txt);margin-bottom:4px}
+.step-body p{font-size:13px;color:var(--txts);line-height:1.6}
+
+/* GARANTIA */
+.guarantee-box{
+  background:linear-gradient(135deg,var(--gold-p),#fff);
+  border:1.5px solid var(--gold-b);border-radius:16px;
+  padding:22px 20px;display:flex;gap:16px;
+  align-items:flex-start;margin-bottom:24px;
+}
+.guar-icon{font-size:32px;flex-shrink:0}
+.guar-body h3{
+  font-family:'Playfair Display',serif;
+  font-size:17px;font-weight:700;color:var(--txt);margin-bottom:6px;
+}
+.guar-body p{font-size:13px;color:var(--txts);line-height:1.6}
+
+/* DEPOIMENTOS */
+.testimonial-grid{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+.tcard{
+  background:var(--white);border:1px solid var(--bdr);
+  border-radius:16px;padding:20px;
+  box-shadow:var(--shadow);
+}
+.tcard-stars{color:#f5a623;font-size:14px;letter-spacing:1px;margin-bottom:10px}
+.tcard-text{font-size:13.5px;color:var(--txts);line-height:1.7;margin-bottom:14px}
+.tcard-author{display:flex;align-items:center;gap:12px}
+.tcard-avatar{
+  width:38px;height:38px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gm),var(--g));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:700;
+}
+.tcard-name{font-size:13px;font-weight:700;color:var(--txt)}
+.tcard-detail{font-size:11.5px;color:var(--txtm)}
+
+/* SEÇÃO PREÇO */
+.price-section{
+  background:linear-gradient(160deg,var(--g) 0%,#1a3d28 100%);
+  padding:36px 22px;color:#fff;
+}
+.price-eyebrow{
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:#74c69d;margin-bottom:12px;
+}
+.price-title{
+  font-family:'Playfair Display',serif;
+  font-size:22px;font-weight:700;line-height:1.25;
+  color:#fff;margin-bottom:24px;
+}
+.price-card{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:16px;padding:22px 20px;
+  text-align:center;margin-bottom:22px;
+}
+.price-from{
+  font-size:12px;color:rgba(255,255,255,.55);
+  text-decoration:line-through;margin-bottom:4px;
+}
+.price-main{
+  font-size:56px;font-weight:800;color:#fff;line-height:1;
+  display:flex;align-items:flex-start;justify-content:center;gap:4px;
+}
+.price-main sup{font-size:22px;font-weight:700;margin-top:12px}
+.cents{font-size:30px;font-weight:700;align-self:flex-end;margin-bottom:4px}
+.price-desc{font-size:12px;color:rgba(255,255,255,.6);margin-top:8px}
+.price-includes{
+  list-style:none;display:flex;flex-direction:column;gap:10px;
+  margin-bottom:24px;
+}
+.price-includes li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13.5px;color:rgba(255,255,255,.88);
+}
+.pi-check{
+  flex-shrink:0;width:18px;height:18px;
+  background:rgba(116,198,157,.25);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-top:2px;
+}
+.cta-btn-price{
+  display:block;width:100%;
+  background:linear-gradient(135deg,#f5c542,#e0a800);
+  color:#1a3d28;
+  font-family:'Lato',sans-serif;font-size:16px;font-weight:900;
+  letter-spacing:.5px;text-align:center;text-decoration:none;
+  padding:20px 24px;border-radius:12px;
+  position:relative;overflow:hidden;
+  box-shadow:0 6px 24px rgba(0,0,0,.25);
+  -webkit-tap-highlight-color:transparent;
+}
+.cta-btn-price .shine{
+  position:absolute;top:0;left:0;width:50%;height:100%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%);
+  animation:shimmer 3.5s ease-in-out infinite;
+}
+.price-trust{
+  display:flex;flex-direction:column;gap:6px;
+  align-items:center;text-align:center;
+  margin-top:14px;font-size:11.5px;color:rgba(255,255,255,.55);
+}
+
+/* FAQ */
+.faq-wrap{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--bdr)}
+.faq-item:first-child{border-top:1px solid var(--bdr)}
+.faq-q{
+  width:100%;background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px 0;font-size:14px;font-weight:700;
+  color:var(--txt);text-align:left;
+  font-family:'Lato',sans-serif;
+}
+.faq-arrow{
+  color:var(--gold);font-size:12px;flex-shrink:0;
+  transition:transform .3s ease;
+}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-ans{
+  max-height:0;overflow:hidden;
+  transition:max-height .35s ease;
+}
+.faq-item.open .faq-ans{max-height:200px}
+.faq-ans-inner{
+  font-size:13.5px;color:var(--txts);
+  line-height:1.7;padding:0 0 16px;
+}
+
+/* STICKY CTA */
+.sticky-cta{
+  position:fixed;bottom:0;left:50%;
+  transform:translateX(-50%);width:100%;max-width:480px;
+  padding:12px 16px;
+  background:rgba(250,248,244,.96);
+  backdrop-filter:blur(8px);
+  border-top:1px solid var(--bdr);
+  z-index:150;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease;
+  transform:translateX(-50%) translateY(100%);
+}
+.sticky-cta.show{
+  opacity:1;pointer-events:all;
+  transform:translateX(-50%) translateY(0);
+}
+.sticky-cta a{
+  display:block;width:100%;
+  background:linear-gradient(135deg,var(--gm),var(--g));
+  color:#fff;font-family:'Lato',sans-serif;
+  font-size:14px;font-weight:800;
+  text-align:center;text-decoration:none;
+  padding:15px 20px;border-radius:10px;
+  position:relative;overflow:hidden;
+  box-shadow:0 4px 16px rgba(45,95,63,.4);
+  letter-spacing:.4px;text-transform:uppercase;
+}
+.sticky-cta a .shine{
+  position:absolute;top:0;left:0;width:50%;height:100%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.2) 50%,transparent 60%);
+  animation:shimmer 3.5s ease-in-out infinite;
+}
+
+/* FOOTER */
+footer{
+  background:var(--g);color:rgba(255,255,255,.7);
+  text-align:center;padding:30px 22px 80px;
+  font-size:12.5px;line-height:1.8;
+}
+footer strong{color:#fff;font-size:14px}
+footer a{color:#74c69d}
+</style>
+</head>
+
+<body>
+
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCQXF5V3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- URGÊNCIA -->
+<div class="urgency-bar">
+  🔥 Oferta de lançamento — <strong>R$7,90</strong> por tempo limitado
+</div>
+
+<!-- PROVA SOCIAL -->
+<div class="social-proof">
+  <div class="sp-dot"></div>
+  <span>+200 noivas já usaram este template</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tag-eyebrow">✦ Template Digital</div>
+  <h1 class="hero-title">
+    Ventarola para Casamento — <em>Pronta para Imprimir</em>
+  </h1>
+  <p class="hero-sub">
+    Template digital com design elegante, criado especialmente para casamentos. Baixe, personalize (se quiser) e mande imprimir — simples assim.
+  </p>
+
+  <div class="product-img-wrap">
+    <img
+      src="https://diariodenoivadasam.wordpress.com/wp-content/uploads/2026/04/whatsapp-image-2026-04-20-at-11.33.38.jpg?w=1024&allow_lossy=1"
+      alt="Ventarola para casamento — template para impressão"
+      width="1024"
+      height="768"
+      fetchpriority="high"
+      loading="eager"
+    >
+    <div class="img-badge">Template Digital</div>
+    <div class="img-price-tag">
+      <div class="ipt-from">R$29,90</div>
+      <div class="ipt-price">R$7,90</div>
+      <div class="ipt-label">acesso imediato</div>
+    </div>
+  </div>
+
+  <ul class="hero-checks">
+    <li>
+      <div class="hc-icon">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#2d5f3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Alta resolução — pronto para impressão
+    </li>
+    <li>
+      <div class="hc-icon">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#2d5f3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Editável no Canva gratuito — troque a frase em minutos
+    </li>
+    <li>
+      <div class="hc-icon">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#2d5f3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Ideal para cerimônias ao ar livre
+    </li>
+    <li>
+      <div class="hc-icon">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#2d5f3f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Entrega imediata por e-mail após a compra
+    </li>
+  </ul>
+
+  <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-btn" id="btn1">
+    <span class="shine"></span>
+    QUERO MINHA VENTAROLA → R$7,90
+  </a>
+  <div class="trust-note">
+    🔒 Pagamento seguro &nbsp;·&nbsp; 7 dias de garantia &nbsp;·&nbsp; Acesso imediato
+  </div>
+</section>
+
+<div class="divider"><span>O que está incluso</span></div>
+
+<!-- O QUE ESTÁ INCLUSO -->
+<section class="section-alt">
+  <div class="sec-tag">No seu kit</div>
+  <h2 class="sec-title reveal">Tudo que você <em>recebe</em></h2>
+  <p class="sec-sub">Um único arquivo, entregue direto no seu e-mail, pronto para usar.</p>
+
+  <ul class="includes-list">
+    <li class="inc-item reveal">
+      <div class="inc-icon">🖨️</div>
+      <div class="inc-body">
+        <h4>Template em alta resolução</h4>
+        <p>Arquivo pronto para enviar à gráfica ou imprimir em casa. Qualidade profissional garantida.</p>
+      </div>
+    </li>
+    <li class="inc-item reveal">
+      <div class="inc-icon">✏️</div>
+      <div class="inc-body">
+        <h4>Editável no Canva gratuito</h4>
+        <p>Personalize a frase, nome dos noivos e data antes de imprimir. Sem precisar de designer.</p>
+      </div>
+    </li>
+    <li class="inc-item reveal">
+      <div class="inc-icon">💌</div>
+      <div class="inc-body">
+        <h4>Entrega imediata por e-mail</h4>
+        <p>Assim que o pagamento for confirmado, o link de acesso chega direto na sua caixa de entrada.</p>
+      </div>
+    </li>
+    <li class="inc-item reveal">
+      <div class="inc-icon">🌿</div>
+      <div class="inc-body">
+        <h4>Design elegante e minimalista</h4>
+        <p>Identidade visual delicada, criada pensando em casamentos com estilo cristão e romântico.</p>
+      </div>
+    </li>
+  </ul>
+
+  <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-sm" id="btn2">
+    <span class="shine"></span>
+    GARANTIR AGORA POR R$7,90
+  </a>
+  <div class="trust-note">📩 Link de acesso enviado imediatamente após a compra</div>
+</section>
+
+<div class="divider"><span>Passo a passo</span></div>
+
+<!-- COMO FUNCIONA -->
+<section class="section">
+  <div class="sec-tag">Simples assim</div>
+  <h2 class="sec-title reveal">Como <em>funciona</em></h2>
+  <p class="sec-sub">Do pagamento à impressão em menos de 10 minutos.</p>
+
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <h4>Compre e receba o acesso</h4>
+        <p>Finalize o pagamento e receba imediatamente o link do template no seu e-mail.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <h4>Personalize no Canva (opcional)</h4>
+        <p>Abra o template no Canva gratuito e troque a frase, nomes e data — leva apenas alguns minutos.</p>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <h4>Exporte e mande imprimir</h4>
+        <p>Baixe em PDF e envie para qualquer gráfica local ou online. A ventarola chega pronta para o seu grande dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><span>Garantia</span></div>
+
+<!-- GARANTIA -->
+<section class="section-alt">
+  <div class="guarantee-box reveal">
+    <div class="guar-icon">🛡️</div>
+    <div class="guar-body">
+      <h3>Garantia total de 7 dias</h3>
+      <p>Se por qualquer motivo você não ficar satisfeita, entre em contato dentro de 7 dias e devolvemos o valor integral. Sem burocracia e sem perguntas.</p>
+    </div>
+  </div>
+
+  <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-sm" id="btn3">
+    <span class="shine"></span>
+    COMPRAR COM GARANTIA → R$7,90
+  </a>
+  <div class="trust-note" style="margin-top:10px">🔒 Pagamento seguro via Eduzz</div>
+</section>
+
+<div class="divider"><span>Depoimentos</span></div>
+
+<!-- DEPOIMENTOS -->
+<section class="section">
+  <div class="sec-tag">Quem já usou</div>
+  <h2 class="sec-title reveal">Noivas que <em>amaram</em></h2>
+
+  <div class="testimonial-grid">
+    <div class="tcard reveal">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">Comprei a ventarola e fiquei apaixonada! O design é lindo, super elegante. Mandei para a gráfica e ficou melhor do que eu esperava. Valeu cada centavo!</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">A</div>
+        <div>
+          <div class="tcard-name">Ana Carolina M.</div>
+          <div class="tcard-detail">Casamento em março de 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tcard reveal">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">Super prático! Recebi o link logo após a compra, abri no Canva, troquei a frase em 5 minutos e mandei imprimir. Meus convidados elogiaram muito!</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">F</div>
+        <div>
+          <div class="tcard-name">Fernanda & Rafael</div>
+          <div class="tcard-detail">Cerimônia ao ar livre</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tcard reveal">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">Tivemos uma cerimônia ao ar livre no verão e as ventarolas foram um sucesso! Todo mundo adorou. Super recomendo, vale muito mais do que o preço.</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">J</div>
+        <div>
+          <div class="tcard-name">Juliana S.</div>
+          <div class="tcard-detail">Noiva — casamento em janeiro</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇO -->
+<section class="price-section">
+  <p class="price-eyebrow">✦ Oferta especial de lançamento</p>
+  <h2 class="price-title reveal">Ventarola para Casamento — Template para Impressão</h2>
+
+  <div class="price-card reveal">
+    <div class="price-from">De R$29,90</div>
+    <div class="price-main">
+      <sup>R$</sup>7<span class="cents">,90</span>
+    </div>
+    <div class="price-desc">Pagamento único · Acesso vitalício</div>
+  </div>
+
+  <ul class="price-includes reveal">
+    <li>
+      <div class="pi-check">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#74c69d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Template em alta resolução para impressão
+    </li>
+    <li>
+      <div class="pi-check">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#74c69d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Editável no Canva gratuito
+    </li>
+    <li>
+      <div class="pi-check">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#74c69d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Entrega imediata por e-mail
+    </li>
+    <li>
+      <div class="pi-check">
+        <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1.5 6L4 8.5L9.5 2.5" stroke="#74c69d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      Garantia de 7 dias sem perguntas
+    </li>
+  </ul>
+
+  <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-btn-price" id="btn4">
+    <span class="shine"></span>
+    SIM, EU QUERO — R$7,90 →
+  </a>
+
+  <div class="price-trust">
+    <span>🔒 Pagamento 100% seguro via Eduzz</span>
+    <span>💳 Pix · Cartão · Boleto</span>
+    <span>📩 Acesso imediato após confirmação</span>
+  </div>
+</section>
+
+<div class="divider"><span>Dúvidas</span></div>
+
+<!-- FAQ -->
+<section class="section-alt">
+  <div class="sec-tag">FAQ</div>
+  <h2 class="sec-title reveal">Perguntas <em>frequentes</em></h2>
+
+  <div class="faq-wrap reveal">
+    <div class="faq-item">
+      <button class="faq-q">
+        O produto é físico ou digital?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-ans">
+        <div class="faq-ans-inner">É totalmente digital. Você recebe o link de acesso ao template por e-mail. Nenhum item físico é enviado. Você personaliza, exporta e leva para imprimir onde preferir.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        Preciso do Canva pago para editar?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-ans">
+        <div class="faq-ans-inner">Não! O template funciona perfeitamente no Canva gratuito. Não é necessário assinar nenhum plano pago.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        Quando recebo o acesso?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-ans">
+        <div class="faq-ans-inner">Imediatamente após a confirmação do pagamento. No caso de boleto, o prazo é de até 3 dias úteis para compensar.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        Posso imprimir em qualquer gráfica?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-ans">
+        <div class="faq-ans-inner">Sim! Basta exportar o arquivo em PDF e enviar para qualquer gráfica local ou online. Recomendamos papel de boa gramatura para melhor resultado.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        Tenho garantia se não gostar?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-ans">
+        <div class="faq-ans-inner">Sim! Você tem 7 dias de garantia total. Se não ficar satisfeita por qualquer motivo, entre em contato e devolvemos o valor integral sem perguntas.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">
+        A ventarola é boa para casamento ao ar livre?
+        <span class="faq-arrow">▼</span>
+      </button>
+      <div class="faq-ans">
+        <div class="faq-ans-inner">Com certeza! Foi pensada exatamente para esse uso — cerimônias ao ar livre ou em locais mais quentes, onde os convidados agradecem pela brisa. Prática e charmosa!</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px">
+    <a href="https://chk.eduzz.com/G96RKR6AW1" class="cta-sm" id="btn5">
+      <span class="shine"></span>
+      QUERO MINHA VENTAROLA → R$7,90
+    </a>
+    <div class="trust-note" style="margin-top:10px">
+      Dúvidas? <a href="mailto:lima03samara@gmail.com" style="color:var(--gold)">lima03samara@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Ventarola para Casamento — Template para Impressão</strong><br>
+  Produto digital · Entrega imediata · Pagamento seguro<br>
+  <a href="mailto:lima03samara@gmail.com">lima03samara@gmail.com</a><br>
+  © 2026 · Diário de Noiva da Sam · Todos os direitos reservados
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://chk.eduzz.com/G96RKR6AW1" id="btn-sticky">
+    <span class="shine"></span>
+    EU QUERO → R$7,90
+  </a>
+</div>
+
+<script>
+// FAQ
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.querySelector('.faq-q').addEventListener('click',function(){
+    var open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(x){x.classList.remove('open')});
+    if(!open) item.classList.add('open');
+  });
+});
+
+// SCROLL REVEAL
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  });
+},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+
+// STICKY CTA
+var sticky=document.getElementById('stickyCta');
+var anchor=document.getElementById('btn1');
+var threshold=600;
+if(anchor){threshold=anchor.getBoundingClientRect().bottom+window.scrollY+80}
+var ticking=false;
+window.addEventListener('scroll',function(){
+  if(!ticking){
+    requestAnimationFrame(function(){
+      sticky.classList.toggle('show',window.scrollY>threshold);
+      ticking=false;
+    });
+    ticking=true;
+  }
+},{passive:true});
+
+// RIPPLE
+document.querySelectorAll('.cta-btn,.cta-sm,.cta-btn-price,.sticky-cta a').forEach(function(btn){
+  btn.addEventListener('click',function(e){
+    var r=this.getBoundingClientRect();
+    var s=Math.max(r.width,r.height)*1.6;
+    var el=document.createElement('span');
+    el.className='ripple-el';
+    el.style.cssText='width:'+s+'px;height:'+s+'px;left:'+(e.clientX-r.left-s/2)+'px;top:'+(e.clientY-r.top-s/2)+'px';
+    this.appendChild(el);
+    setTimeout(function(){el.remove()},700);
+  });
+});
+
+// TIKTOK
+document.querySelectorAll('[id^="btn"]').forEach(function(b){
+  b.addEventListener('click',function(){
+    if(typeof ttq!=='undefined') ttq.track('ClickButton');
+  });
+});
+</script>
+</body>
+</html>
